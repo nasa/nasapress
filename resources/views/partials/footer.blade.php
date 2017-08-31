@@ -49,8 +49,7 @@
 
 <script type="text/javascript">
 //<![CDATA[
-      //todo-config
-      var usasearch_config = { siteHandle:"your-site-handle" };
+      var usasearch_config = { siteHandle:"nasa-glenn" };
 
       var script = document.createElement("script");
       script.type = "text/javascript";

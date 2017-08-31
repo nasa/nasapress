@@ -42,6 +42,6 @@
   @endif
   @if (function_exists(environment) && environment() == 'production')
   <!-- todo-config -->
-  <script async id="_fed_an_ua_tag" type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&amp;subagency=MY-SUBAGENCY&amp;dclink=true&amp;yt=true&amp;sp=search,s"></script>
+  <script async id="_fed_an_ua_tag" type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&amp;subagency=GRC&amp;dclink=true&amp;yt=true&amp;sp=search,s"></script>
   @endif
 </head>

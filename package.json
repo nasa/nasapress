@@ -24,7 +24,9 @@
     "start": "webpack --hide-modules --watch --config resources/assets/build/webpack.config.js",
     "rmdist": "rimraf dist",
     "lint": "eslint resources/assets/scripts resources/assets/build",
-    "test": "yarn run lint"
+    "test": "yarn run lint",
+    "deploy": "yarn run build:production && ../../../../deploy.sh",
+    "deploy:nobuild": "../../../../deploy.sh"
   },
   "engines": {
     "node": ">= 6.9.4"
