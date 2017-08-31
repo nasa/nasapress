@@ -1,0 +1,58 @@
+body.home {
+
+@import 'big-hero';
+
+.usa-section h2 {
+  margin-bottom: .5em !important;
+  font-size: $h1-font-size;
+}
+
+//todo: add to nasawds and remove from here. 
+.usa-section-dark {
+  @include font-smoothing;
+  p {
+    font-weight: bold;
+  }
+}
+
+.usa-section:not(.usa-section-dark) {
+  background-color: $color-gray-lightest;
+  h2 {
+    color: $color-primary-darker;
+  }
+}
+
+.usa-graphic_list .usa-font-lead {
+  margin-bottom: 65px;
+}
+
+.usa-graphic_list-mars {
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('#{$image-path}/mars-rover-tracks.jpg') 0% 0%/cover;
+}
+
+.usa-graphic_list-aero {
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('#{$image-path}/aero.jpeg') 50% 50%/cover;
+}
+
+.usa-graphic_list-facilities {
+  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('#{$image-path}/bli_grc.jpg') 50% 50%/cover;
+}
+
+.usa-footer {
+  background-color: $color-gray-lightest;
+}
+
+.usa-button .fa-external-link {
+  font-size: 11px;
+}
+
+.usa-external_link::after {
+  display: none;
+}
+
+.usa-hero .video-container iframe {
+  padding: 4px;
+  background-color: $color-gray-cool-light;
+}
+
+}

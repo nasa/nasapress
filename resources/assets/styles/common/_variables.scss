@@ -1,0 +1,39 @@
+// Vendor -------------- //
+@import '~nasawds/src/stylesheets/lib/bourbon';
+
+$font-path: '~nasawds/dist/fonts';
+$image-path: '~nasawds/dist/img';
+
+$z-nav-secondary: 10;
+
+// Typography
+// Removing the !default from $em-base so we are not inheriting that
+// value from Bourbon.
+$em-base:             10px;
+$base-font-size:      rem(15px);
+$small-font-size:     rem(14px);
+$lead-font-size:      rem(22px);
+$title-font-size:     rem(59px);
+$h1-font-size:        rem(44px);
+$h2-font-size:        rem(34px);
+$h3-font-size:        rem(24px);
+$h4-font-size:        rem(19px);
+$h5-font-size:        rem(16px);
+$h6-font-size:        rem(13px);
+$base-line-height:    1.7;
+$heading-line-height: 1.2;
+$lead-line-height:    1.5;
+$nav-width:           1095px;
+$site-max-width:      1060px;
+
+$header-height: 10.5rem;
+
+// minimum width of wp-admin bar at 32px high before becoming 46px high.
+$wp-admin-bar-width:          783px;
+$wp-admin-bar-height:         32px;
+$wp-admin-bar-mobile-height:  46px;
+
+$external-href:     '[href^="http"]:not([href*=".gov"])';
+
+
+

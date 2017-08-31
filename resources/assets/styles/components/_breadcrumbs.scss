@@ -1,0 +1,15 @@
+.breadcrumbs > span > span > a {
+  margin-left: 0px;
+}
+
+.breadcrumbs a {
+  margin: 0px 5px;
+}
+
+.breadcrumb_last {
+  margin-left: 5px;
+  .usa-hero & {
+    @include font-smoothing;
+    font-size: $base-font-size + .1rem;
+  }
+}

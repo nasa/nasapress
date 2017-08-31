@@ -1,0 +1,55 @@
+.anchorific ul {
+	list-style-type: none;
+}
+
+.anchorific li ul {
+	list-style-type: none;
+}
+
+.anchorific .usa-sidenav-list li.active > a {
+	border-left: 4px solid $color-primary;
+  color: $color-primary;
+  font-weight: $font-bold;
+  padding-left: 1.4rem;
+}
+
+.anchorific .usa-sidenav-sub_list li.active > a {
+	&:hover,
+  & { /* stylelint-disable-line selector-no-qualifying-type */
+    border: none;
+    padding-left: 2.8rem;
+  }
+}
+
+@include media($nav-width) {
+  
+  body.home.admin-bar main .usa-section h2 {
+    &::before {
+      height:77px + $wp-admin-bar-height; /* fixed header height*/
+      margin-top:-77px - $wp-admin-bar-height; /* negative fixed header height */
+    }
+  } 
+  
+  .usa-layout-docs-main_content h2, .usa-layout-docs-main_content h3, .usa-layout-docs-main_content h4, .usa-layout-docs-main_content .grc-grid-view-links, body.home main .usa-section h2 {
+    clear: none;
+    &::before {
+      content:" ";
+      display:block;
+      height:77px; /* fixed header height*/
+      margin-top: -77px; /* negative fixed header height */
+      visibility: hidden;
+    }
+
+    .admin-bar & {
+      &::before {
+        height:77px + $wp-admin-bar-height; /* fixed header height*/
+        margin-top:-77px - $wp-admin-bar-height; /* negative fixed header height */
+      }
+    } 
+  }
+
+  .usa-layout-docs-main_content a, body.home main a {
+    position: relative;
+    z-index: 1;
+  }
+}

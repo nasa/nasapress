@@ -1,0 +1,72 @@
+{
+  "name": "nasapress",
+  "version": "1.0.0",
+  "author": "Brandon Ruffridge",
+  "homepage": "https://github.com/bruffridge/nasapress",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bruffridge/nasapress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bruffridge/nasapress/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "build": "webpack --progress --config resources/assets/build/webpack.config.js",
+    "build:production": "webpack --progress -p --config resources/assets/build/webpack.config.js",
+    "build:profile": "webpack --progress --profile --json --config resources/assets/build/webpack.config.js",
+    "start": "webpack --hide-modules --watch --config resources/assets/build/webpack.config.js",
+    "rmdist": "rimraf dist",
+    "lint": "eslint resources/assets/scripts resources/assets/build",
+    "test": "yarn run lint"
+  },
+  "engines": {
+    "node": ">= 6.9.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.8",
+    "browsersync-webpack-plugin": "^0.5.3",
+    "bs-html-injector": "^3.0.3",
+    "buble-loader": "^0.4.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-globs-webpack-plugin": "^0.2.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-import": "^2.2.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-webpack-plugin": "^1.4.4",
+    "nasawds": "^1.2.1",
+    "node-sass": "^4.5.1",
+    "optimize-css-assets-webpack-plugin": "^1.3.1",
+    "postcss-loader": "^1.3.3",
+    "resolve-url-loader": "^2.0.2",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-assets-manifest": "^0.6.2",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-merge": "^4.1.0",
+    "yargs": "^7.1.0"
+  },
+  "dependencies": {
+    "anchorific": "renettarenula/anchorific.js#v1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "1.12.4 - 3",
+    "stickyfill": "wilddeer/stickyfill#v1.1.4"
+  }
+}

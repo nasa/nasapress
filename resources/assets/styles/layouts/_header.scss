@@ -1,0 +1,210 @@
+// Header -------------- //
+
+@mixin sticky($width, $side, $distance) {
+  @include media(#{$width}) {
+    position: -webkit-sticky;
+    position: sticky;
+    #{$side}: #{$distance};
+
+    @if $side == 'top' {
+      &:before,
+      &:after {
+        content: '';
+        display: table;
+      }
+    }
+  }
+
+  @if $side == 'left' {
+    @include ie(#{$width}) {
+      /* IE10+ CSS styles go here */
+      position: static;
+      left: auto;
+    }
+  }
+}
+
+.usa-nav-container {
+  max-width: 1080px;
+}
+
+.usa-header-basic {
+  border-bottom: none;
+
+  @include media($nav-width) {
+    body.home &, body.template-landing & {
+      transition: background .3s;
+      background: none;
+    }
+    position: fixed;
+    top: 0px;
+    .admin-bar & {
+      top: $wp-admin-bar-height;
+    }
+  }
+
+  .usa-navbar {
+    @include media($nav-width) {
+      height: 10rem;
+      transition: height .3s;
+    }
+  }
+
+  .usa-nav-dark {
+    @include media($nav-width) {
+      background: none;
+    }
+  }
+
+  .usa-logo {
+    @include media($nav-width) {
+      bottom: -.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: $nav-width - 1px) {
+  .usa-nav-primary button {
+    font-size: $h4-font-size;
+  }
+}
+
+//todo: remove once this gets added to nasawds package.
+@include media($nav-width) {
+  .usa-header-basic-megamenu .usa-nav-inner {
+    display: block;
+  }
+}
+
+.show-logo.usa-header-basic {
+  @include media($nav-width) {
+    body.home &, body.template-landing & {
+      background: rgba(0,0,0,.8);
+    }
+  }
+}
+
+.show-logo .usa-navbar {
+  @include media($nav-width) {
+    height: 5rem;
+  }
+}
+
+.show-logo .usa-search {
+  @include media($nav-width) {
+    top: 5px;
+  }
+}
+
+.usa-logo {
+  img {
+    vertical-align: middle;
+    width: 40px;
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+    @include media($nav-width) {
+      transition: all .3s;
+      top: -8px;
+      width: 85px;
+      margin-right: 15px;
+      float: left;
+      .show-logo & {
+        width: 55px;
+        top: -2px;
+      }
+    }
+  }
+}
+
+.usa-logo-text {
+  a {
+    font-weight: $font-bold;
+    @include font-smoothing;
+    @include media($nav-width) {
+      display: block;
+      width: 230px;
+      font-size: 1.6rem;
+      line-height: 1.3;
+      transition: all .3s;
+      .show-logo & {
+        font-size: 1.4rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+.usa-logo-main-text {
+  @include media($nav-width) {
+    font-size: 3.2rem;
+    line-height: 1;
+    transition: all .3s;
+    .show-logo & {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.usa-logo-name {
+  padding-bottom: 50px;
+}
+
+.usa-layout-docs-sidenav.sticky {
+  @include sticky($large-screen, 'top', 80px);
+  overflow-y: auto;
+}
+
+.admin-bar .usa-layout-docs-sidenav.sticky {
+  @include sticky($large-screen, 'top', 80px + $wp-admin-bar-height);
+}
+
+.admin-bar .usa-nav {
+  top: $wp-admin-bar-mobile-height;
+  @include media($wp-admin-bar-width) {
+    top: $wp-admin-bar-height;
+  }
+  @include media($nav-width) {
+    top: auto;
+  }
+}
+
+
+.site-nav-secondary {
+  display: none;
+
+  @include media($nav-width) {
+    border-bottom: 1px solid $color-gray-light;
+    clear: both;
+    display: block;
+    height: $height-nav-secondary;
+    padding-left: 3rem;
+    z-index: $z-nav-secondary;
+  }
+
+  ul {
+    @include unstyled-list;
+
+    li {
+      display: inline;
+      padding-right: 3rem;
+    }
+  }
+
+  a {
+    line-height: $height-nav-secondary;
+  }
+}
+
+@include media($nav-width) {
+  .usa-header .usa-search {
+    width: 175px;
+  }
+}
+
+.usa-nav {
+  i {
+    font-size: $base-font-size - .4rem;
+    margin-left: 5px;
+  }
+}

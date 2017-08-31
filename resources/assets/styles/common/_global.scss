@@ -1,0 +1,92 @@
+$font-path: '../fonts';
+$image-path: '../images';
+
+@mixin ie($bp) {
+  @media screen and (min-width: #{$bp}) and (-ms-high-contrast: none), (-ms-high-contrast: active)  {
+    /* IE10+ CSS styles go here */
+    @content;
+  }
+}
+
+html,
+body {
+  height: auto;
+}
+
+main {
+  font-family: $font-serif;
+}
+
+
+.usa-layout-docs {
+  // fixes known FF print bug caused by display: flex. https://bugzilla.mozilla.org/show_bug.cgi?id=939897
+// display: flex was used to move sidenav below main content, however we are using javascript to move it under leading paragraph so it's not needed.
+  display: block;
+  
+  height: auto;
+  @include media($nav-width) {
+    margin-top: $header-height;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-sans;
+}
+
+.usa-layout-docs-main_content {
+  h2, h3, h4 {
+    color: $color-primary-darker;
+  }
+}
+
+.usa-font-lead {
+  font-family: $font-sans;
+  font-weight: 300;
+}
+
+.usa-heading {
+  color: $color-primary-darker;
+}
+
+.site-subheading {
+  @include h6;
+  color: $color-gray;
+  display: block;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+  margin-top: 0;
+  &.h2 {
+    margin-top: 5rem;
+  }
+}
+
+.site-subheading + * {
+  margin-top: 0px;
+} 
+
+main header {
+  > h1 {
+    display: inline-block;
+    margin-top: 0;
+  }
+}
+
+main figure {
+  //float: left;
+  //display: inline-block;
+  margin: 0px;
+}
+
+main figure:not(.gallery-item) {
+  img {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+}
+
+.fa-external-link {
+  font-size: 12px;
+  margin-left: 5px;
+}
+/*
+remove width inline style from figure, and width and height attributes from img.
+*/

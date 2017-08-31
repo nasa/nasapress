@@ -1,0 +1,12 @@
+@media print {
+  .usa-header, aside.usa-layout-docs-sidenav, .usa-footer, .yarpp-related, #wpadminbar {
+    display:none;
+  }
+}
+
+// fixes IE whitespace at top of first page print bug caused by stickyfill polyfill.
+@media print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .sticky + div[style] {
+    display: none;
+  }
+}

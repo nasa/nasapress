@@ -1,0 +1,11 @@
+table {
+  th {
+    background-color: $color-gray-lightest;
+  }
+
+  tbody {
+    th {
+      font-weight: $font-bold;
+    }
+  }
+}
