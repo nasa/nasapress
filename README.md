@@ -2,7 +2,7 @@
 
 ## Sites using NASAPress.
 
-If you'd like to be added to this list please [create an issue]() with your website name and URL.
+If you'd like your site to be added to this list please [create an issue](https://github.com/bruffridge/nasapress/issues/new) with your website name and URL.
 
 * [NASA Glenn Research Center](https://www1.grc.nasa.gov)
 
@@ -15,7 +15,7 @@ If you'd like to be added to this list please [create an issue]() with your webs
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Laravel's Blade](https://laravel.com/docs/5.3/blade) as a templating engine
 * [NASA GRC Web Design Standards](https://bruffridge.github.io/web-design-standards-docs/) based on [U.S. Web Design Standards](https://standards.usa.gov) for CSS framework
-* Font Awesome
+* [Font Awesome](http://fontawesome.io/)
 
 ### Required plugins
 
@@ -24,7 +24,7 @@ If you'd like to be added to this list please [create an issue]() with your webs
 
 ### Recommended plugins
 
-* [NASAPress Companion]()
+* [NASAPress Companion](https://github.com/bruffridge/nasapress-companion)
   * adds shortcodes for displaying nasa.gov news articles, spinoffs, and lists of pages.
 * [Advanced TinyMCE Configuration](https://wordpress.org/plugins/advanced-tinymce-configuration/)
     * allows editors to add NASA Web Design Standards styles to elements in the visual text editor.
@@ -40,12 +40,12 @@ If you'd like to be added to this list please [create an issue]() with your webs
 * [Yet Another Related Posts Plugin](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
 * [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)
   * for breadcrumbs
-* [Gravity Forms]() and [Gravity Forms Survey Add-On]()
+* [Gravity Forms](http://www.gravityforms.com/) and [Gravity Forms Survey Add-On](http://www.gravityforms.com/add-ons/survey/)
   * for site feedback form and other forms.
-* [Popup Maker]()
+* [Popup Maker](https://wordpress.org/plugins/popup-maker/)
   * for displaying site feedback form in a popup window.
-* Hide YouTube Related Videos
-* Broken Link Checker
+* [Hide YouTube Related Videos](https://wordpress.org/plugins/hide-youtube-related-videos/)
+* [Broken Link Checker](https://wordpress.org/plugins/broken-link-checker/)
 
 ### Designed for use with these services
 
@@ -58,7 +58,7 @@ Make sure all dependencies have been installed before moving on:
 
 * [WordPress](https://wordpress.org/) >= 4.7
 * [PHP](http://php.net/manual/en/install.php) >= 5.6.4
-* [MySQL]() >= 5.6 or []() [MariaDB]() >= 10.0
+* MySQL >= 5.6 or MariaDB >= 10.0
   * Earlier versions don't support FULLTEXT index for InnoDB engine required by YARPP plugin. See [this explanation of issue](https://easyengine.io/tutorials/mysql/yarpp-innodb/).
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 6.9.x
@@ -76,6 +76,7 @@ $ composer install
 ```
 
 Run `yarn` from the theme directory to install dependencies
+
 Update `resources/assets/config.json` settings:
   * `devUrl` should reflect your local development hostname
   * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
