@@ -21,7 +21,7 @@
         <img class="usa-footer-circle-124" src="@asset('images/logo-nasa.svg')" alt="NASA logo">
         <h3 class="usa-footer-logo-heading">National Aeronautics and Space Administration</h3>
         <p>NASA Official: {{ App\get_nasa_official(get_the_id()) }}<br />
-        Page Editor: {{ the_author() }}<br />
+        Page Editor: @php the_author(); @endphp<br />
         Page Last Updated: {{ the_modified_date() }}
         </p>
         <p><a href="https://www.nasa.gov/about/highlights/HP_Privacy.html">Privacy Policy</a> &nbsp;| &nbsp;<a href="http://odeo.hq.nasa.gov/nofear.html">No Fear Act</a> &nbsp;| &nbsp;<a href="https://www.nasa.gov/FOIA/index.html">FOIA</a></p>
@@ -46,6 +46,12 @@
 </footer>
 <!-- todo-config -->
 <a href="#" id="feedback-trigger" class="feedback-trigger feedback-trigger-right">Provide feedback</a>
+
+<!--[if lt IE 9]>
+  <script src="@asset('scripts/vendor/selectivizr-min.js')"></script>
+  <script src="@asset('scripts/vendor/respond.js')"></script>
+  <script src="@asset('scripts/vendor/rem.min.js')"></script>
+<![endif]-->
 
 <script type="text/javascript">
 //<![CDATA[

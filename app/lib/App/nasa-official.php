@@ -78,7 +78,7 @@ add_action ( 'edited_category', 'App\\nasa_official_save');
 	 // TODO: This shouldn't be hard-coded...
    // todo-config
 	 if(!count($officialIds)) {
-		 $nasaOfficial = get_user_by('login', 'YOUR_DEFAULT_USERNAME');
+		 $nasaOfficial = get_user_by('login', 'rkurak');
 	 } else {
 		 $nasaOfficial = get_userdata( $officialIds[0] );
 	 }
