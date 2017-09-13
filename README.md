@@ -2,7 +2,7 @@
 
 ## Sites using NASAPress.
 
-If you'd like your site to be added to this list please [create an issue](https://github.com/bruffridge/nasapress/issues/new) with your website name and URL.
+If you'd like your site to be added to this list please [create an issue](https://github.com/nasa/nasapress/issues/new) with your website name and URL.
 
 * [NASA Glenn Research Center](https://www1.grc.nasa.gov)
 
@@ -24,7 +24,7 @@ If you'd like your site to be added to this list please [create an issue](https:
 
 ### Recommended plugins
 
-* [NASAPress Companion](https://github.com/bruffridge/nasapress-companion)
+* [NASAPress Companion](https://github.com/nasa/nasapress-companion)
   * adds shortcodes for displaying nasa.gov news articles, spinoffs, and lists of pages.
 * [Advanced TinyMCE Configuration](https://wordpress.org/plugins/advanced-tinymce-configuration/)
     * allows editors to add NASA Web Design Standards styles to elements in the visual text editor.
