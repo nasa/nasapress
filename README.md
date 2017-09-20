@@ -152,48 +152,6 @@ The default and landing page templates automatically convert h2, h3, and h4 tags
 
 A NASA Official can be added or changed on the edit page category screen. You can select from any users of your WordPress site.
 
-## Theme structure
-
-```shell
-themes/your-theme-name/   # → Root of your Sage based theme
-├── app/                  # → Theme PHP
-│   ├── lib/App/          # → NASAPress functions
-│   ├── lib/Sage/         # → Blade implementation, asset manifest
-│   ├── admin.php         # → Theme customizer setup
-│   ├── filters.php       # → Theme filters
-│   ├── helpers.php       # → Helper functions
-│   └── setup.php         # → Theme setup
-├── composer.json         # → Autoloading for `app/` files
-├── composer.lock         # → Composer lock file (never edit)
-├── dist/                 # → Built theme assets (never edit)
-├── node_modules/         # → Node.js packages (never edit)
-├── package.json          # → Node.js dependencies and scripts
-├── resources/            # → Theme assets and templates
-│   ├── assets/           # → Front-end assets
-│   │   ├── config.json   # → Settings for compiled assets
-│   │   ├── build/        # → Webpack and ESLint config
-│   │   ├── fonts/        # → Theme fonts
-│   │   ├── images/       # → Theme images
-│   │   ├── scripts/      # → Theme JS
-│   │   └── styles/       # → Theme stylesheets
-│   ├── functions.php     # → Composer autoloader, theme includes
-│   ├── index.php         # → Never manually edit
-│   ├── screenshot.png    # → Theme screenshot for WP admin
-│   ├── style.css         # → Theme meta information
-│   └── views/            # → Theme templates
-│       ├── layouts/      # → Base templates
-│       └── partials/     # → Partial templates
-└── vendor/               # → Composer packages (never edit)
-```
-
-## Theme development
-
-### Build commands
-
-* `yarn run start` — Compile assets when file changes are made, start Browsersync session
-* `yarn run build` — Compile and optimize the files in your assets directory
-* `yarn run build:production` — Compile assets for production
-
 ## Todos
 
 Make site title customizable in wp-admin.
