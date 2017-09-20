@@ -1,4 +1,4 @@
-# Contributing to NASAPress Theme
+# Contributing to NASAPress Themes
 
 ## Theme development
 
