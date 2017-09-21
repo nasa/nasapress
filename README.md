@@ -2,7 +2,7 @@
 
 ![screen shot](https://user-images.githubusercontent.com/1322063/30714364-8aedee4e-9ee0-11e7-8bf8-4ed7c37ec698.png)
 
-## Sites using NASAPress.
+## Sites using NASAPress
 
 If you'd like your site to be added to this list please [create an issue](https://github.com/nasa/nasapress/issues/new) with your website name and URL.
 
