@@ -24,7 +24,7 @@ If you'd like your site to be added to this list please [create an issue](https:
 
 ### Recommended plugins
 
-* [NASAPress Companion](https://github.com/nasa/nasapress-companion)
+* [NASAPress Companion (GRC)](https://gitlab.grc.nasa.gov/wade/nasapress-companion-grc)
   * adds shortcodes for displaying nasa.gov news articles, spinoffs, and lists of pages.
 * [Advanced TinyMCE Configuration](https://wordpress.org/plugins/advanced-tinymce-configuration/)
     * allows editors to add NASA Web Design Standards styles to elements in the visual text editor.
@@ -79,11 +79,7 @@ Run `yarn` from the theme directory to install dependencies
 
 Update `resources/assets/config.json` settings:
   * `devUrl` should reflect your local development hostname
-  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
-
-## Theme setup
-
-Search the theme folder for `todo-config`. These comments mark the locations where you'll likely need to make customizations for your site.
+  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/nasapress` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
 ### Add top navigation
 
