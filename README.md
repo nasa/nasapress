@@ -117,25 +117,27 @@ todo
 
 Although not technically a template the theme expects a static front page and styles it differently than the others. Use the following as a starting point for this page.
 ```html
-  <div class="usa-overlay"></div>
-  <section class="usa-hero">
+<div class="usa-overlay"></div>
+
+<section class="usa-hero">
   <div class="usa-grid">
-  <div class="usa-width-one-half">
-    <h1>Shaping the world of tomorrow</h1>
-  </div>
+    <div class="usa-width-one-half">
+      <h1>Shaping the world of tomorrow</h1>
+    </div>
   </div>
   <div class="usa-grid">
-  <div class="usa-width-one-half">
-    <p class="usa-font-lead">By developing technologies that will enable further exploration of the universe and revolutionize air travel</p>
-   </div></div>
-<div class="usa-grid">
-  <div class="usa-width-two-thirds">
-<div class="video-container">
-https://www.youtube.com/watch?v=5VHPanW6F4E
-</div>
+    <div class="usa-width-one-half">
+      <p class="usa-font-lead">By developing technologies that will enable further exploration of the universe and revolutionize air travel</p>
+    </div>
   </div>
+  <div class="usa-grid">
+    <div class="usa-width-two-thirds">
+      <div class="video-container">
+        https://www.youtube.com/watch?v=5VHPanW6F4E
+      </div>
+    </div>
   </div>
-  </section>
+</section>
 ```
 
 #### Landing Page
