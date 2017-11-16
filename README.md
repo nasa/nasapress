@@ -93,7 +93,7 @@ Install and activate the Yoast SEO plugin. Follow steps 1-5 [in this guide](http
 
 If you want to show related pages at the bottom of pages install and activate the YARPP plugin. On the plugin settings, you might see a message about 'consider titles' and 'consider bodies' being disabled due to InnoDB... If you are using MySQL 5.6 or greater, expand the message and click the 'Create FULLTEXT indices' button to enable them.
 
-Under display options, select 'Pages', then click the Custom button and make sure 'You Might Also Like' is selected as the template file. 
+Under display options, select 'Pages', then click the Custom button and make sure 'You Might Also Like' is selected as the template file.
 
 ### Add NASA Web Design Standards styles to Visual Editor
 
@@ -111,25 +111,27 @@ todo
 
 Although not technically a template the theme expects a static front page and styles it differently than the others. Use the following as a starting point for this page.
 ```html
-  <div class="usa-overlay"></div>
-  <section class="usa-hero">
+<div class="usa-overlay"></div>
+
+<section class="usa-hero">
   <div class="usa-grid">
-  <div class="usa-width-one-half">
-    <h1>Shaping the world of tomorrow</h1>
-  </div>
+    <div class="usa-width-one-half">
+      <h1>Shaping the world of tomorrow</h1>
+    </div>
   </div>
   <div class="usa-grid">
-  <div class="usa-width-one-half">
-    <p class="usa-font-lead">By developing technologies that will enable further exploration of the universe and revolutionize air travel</p>
-   </div></div>
-<div class="usa-grid">
-  <div class="usa-width-two-thirds">
-<div class="video-container">
-https://www.youtube.com/watch?v=5VHPanW6F4E
-</div>
+    <div class="usa-width-one-half">
+      <p class="usa-font-lead">By developing technologies that will enable further exploration of the universe and revolutionize air travel</p>
+    </div>
   </div>
+  <div class="usa-grid">
+    <div class="usa-width-two-thirds">
+      <div class="video-container">
+        https://www.youtube.com/watch?v=5VHPanW6F4E
+      </div>
+    </div>
   </div>
-  </section>
+</section>
 ```
 
 #### Landing Page
@@ -139,7 +141,7 @@ The landing page template features a large hero image with leading paragraph fol
 #### Default template
 
 The default template has no top hero section.
- 
+
 ### On this page navigation
 
 The default and landing page templates automatically convert h2, h3, and h4 tags into left 'in page' navigation. For shorter pages, this may not be desired, and can be turned off in the "On this page" settings on the edit page screen. In this section, you can also change which heading tags to convert to navigation.
