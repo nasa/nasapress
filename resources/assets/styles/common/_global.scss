@@ -22,7 +22,7 @@ main {
   // fixes known FF print bug caused by display: flex. https://bugzilla.mozilla.org/show_bug.cgi?id=939897
 // display: flex was used to move sidenav below main content, however we are using javascript to move it under leading paragraph so it's not needed.
   display: block;
-  
+
   height: auto;
   @include media($nav-width) {
     margin-top: $header-height;
@@ -50,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-subheading {
   @include h6;
+  font-family: $font-sans;
   color: $color-gray;
   display: block;
   letter-spacing: 0.5px;
@@ -62,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-subheading + * {
   margin-top: 0px;
-} 
+}
 
 main header {
   > h1 {

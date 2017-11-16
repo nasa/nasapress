@@ -81,7 +81,7 @@ Run `yarn` from the theme directory to install dependencies
 
 Update `resources/assets/config.json` settings:
   * `devUrl` should reflect your local development hostname
-  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/sage` for non-[Bedrock](https://roots.io/bedrock/) installs)
+  * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/nasapress` for non-[Bedrock](https://roots.io/bedrock/) installs)
 
 ## Theme setup
 
@@ -99,7 +99,7 @@ Install and activate the Yoast SEO plugin. Follow steps 1-5 [in this guide](http
 
 If you want to show related pages at the bottom of pages install and activate the YARPP plugin. On the plugin settings, you might see a message about 'consider titles' and 'consider bodies' being disabled due to InnoDB... If you are using MySQL 5.6 or greater, expand the message and click the 'Create FULLTEXT indices' button to enable them.
 
-Under display options, select 'Pages', then click the Custom button and make sure 'You Might Also Like' is selected as the template file. 
+Under display options, select 'Pages', then click the Custom button and make sure 'You Might Also Like' is selected as the template file.
 
 ### Add NASA Web Design Standards styles to Visual Editor
 
@@ -147,7 +147,7 @@ The landing page template features a large hero image with leading paragraph fol
 #### Default template
 
 The default template has no top hero section.
- 
+
 ### On this page navigation
 
 The default and landing page templates automatically convert h2, h3, and h4 tags into left 'in page' navigation. For shorter pages, this may not be desired, and can be turned off in the "On this page" settings on the edit page screen. In this section, you can also change which heading tags to convert to navigation.
