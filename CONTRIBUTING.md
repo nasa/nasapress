@@ -99,8 +99,9 @@ export default {
 
 ```js
 const routes = new Router({
-  /** All pages */
+  // All pages
   common,
+  // 1x1 page
   slug1x1,
 });
 ```
