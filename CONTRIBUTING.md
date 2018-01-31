@@ -94,7 +94,7 @@ export default {
 ```
 
 1. Add your javascript code after the comment.
-1. Open `scripts/main.js` and add an import statement for your route. Ex. `import slug1x1 from './routes/1x1';`. Notice the variable name we assigned of `slug1x1`. This has to match a body class converted to camelCase or your javascript will not run. So if we want javascript that only runs on the 1x1 page, since the body class will be `slug-1x1`, removing the dashes to convert to camelCase would make our variable name `slug1x1`. If the page name is `/my-page` our variable name would be `slugMyPage`. We can use other body classes as well, so if you want javascript to run only on the landing page template which adds `template-landing` class to the body, use `templateLanding` as the variable name.
+1. Open `scripts/main.js` and add an import statement for your route. Ex. `import slug1x1 from './routes/1x1';`. Notice the variable name we assigned of `slug1x1`. This has to match a css classname attached to the `<body>` tag converted to camelCase or your javascript will not run. So if we want javascript that only runs on the 1x1 page, since the body class will be `slug-1x1`, removing the dashes to convert to camelCase would make our variable name `slug1x1`. If the page name is `/my-page` our variable name would be `slugMyPage`. We can use other body classes as well, so if you want javascript to run only on the landing page template which adds `template-landing` class to the body, use `templateLanding` as the variable name.
 1. Add your import variable to the Router:
 
 ```js
