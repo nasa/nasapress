@@ -39,7 +39,7 @@
           <!-- todo-config -->
           <p class="usa-footer-contact-heading">Glenn Research Center</p>
           <p>21000 Brookpark Road<br />Cleveland, OH 44135<br />(216) 433-4000</p>
-          <p><a href="https://www.nasa.gov/centers/glenn/about/grcfaq.html">Contact Us</a> &nbsp;| &nbsp;<a href="https://www.nasa.gov/glenn">nasa.gov/glenn</a></p>
+          <p class="mb0"><a href="https://www.nasa.gov/centers/glenn/about/grcfaq.html">Contact Us</a> &nbsp;| &nbsp;<a href="https://www.nasa.gov/glenn">nasa.gov/glenn</a></p>
 
         </address>
       </div>

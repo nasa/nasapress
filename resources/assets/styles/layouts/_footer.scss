@@ -107,3 +107,11 @@
     border-radius: 0 0 5px 5px;
   }
 }
+
+.usa-footer-medium {
+  .usa-footer-logo {
+    @include media($medium-screen) {
+      padding: 0;
+    }
+  }
+}
