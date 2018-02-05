@@ -170,6 +170,7 @@ sage()->bindIf('config', Config::class, true);
 require_once 'lib/App/NASAWDSBasicNavwalker.php';
 require_once 'lib/App/acf-nasapress.php';
 require_once 'lib/App/nasa-official.php';
+require_once 'lib/App/child-navigation.php';
 
 add_image_size( 'medium_large', '768', '0', false ); 
 add_image_size( 'medium_large', '768', '0', false ); 

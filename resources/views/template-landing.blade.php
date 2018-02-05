@@ -30,7 +30,13 @@
       @php ($gridSize = 'one-whole')
       @if ( !get_field('otp_hide') )
       @php ($gridSize = 'three-fourths')
-      <aside class="usa-width-one-fourth usa-layout-docs-sidenav sticky"><p class='usa-layout-docs-sidenav-title'>On this page:</p><nav class='anchorific' data-headings='{{ get_field('otp_heading_tags') }}'></nav></aside>
+      <aside class="usa-width-one-fourth usa-layout-docs-sidenav sticky">
+        @if ( trim(get_field('navigation_type')) == 'multiple_page' )
+        {!! App\wpb_list_child_pages() !!}
+        @else
+        <p class='usa-layout-docs-sidenav-title'>On this page:</p><nav class='anchorific' data-headings='{{ get_field('otp_heading_tags') }}'></nav>
+        @endif
+      </aside>
       @endif
       <div class="usa-width-{{ $gridSize }} usa-layout-docs-main_content">
       

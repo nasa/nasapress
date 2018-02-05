@@ -3,23 +3,22 @@
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_on-this-page-settings',
-		'title' => '"On this page" settings',
+		'id' => 'acf_navigation-options',
+		'title' => 'Navigation Options',
 		'fields' => array (
 			array (
 				'key' => 'field_597229553989a',
-				'label' => 'Hide "On this page" navigation',
+				'label' => 'Remove Left Navigation',
 				'name' => 'otp_hide',
 				'type' => 'true_false',
 				'message' => '',
 				'default_value' => 0,
 			),
 			array (
-				'key' => 'field_597229743989b',
-				'label' => 'Heading tags to use',
-				'name' => 'otp_heading_tags',
+				'key' => 'field_5a788d212c5ff',
+				'label' => 'Type',
+				'name' => 'navigation_type',
 				'type' => 'radio',
-				'instructions' => 'Select which tags get used to generate the "on this page" navigation.',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -27,6 +26,37 @@ if(function_exists("register_field_group"))
 							'field' => 'field_597229553989a',
 							'operator' => '!=',
 							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'choices' => array (
+					'single_page' => 'Single Page',
+					'multiple_page' => 'Multiple Page',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'single_page',
+				'layout' => 'horizontal',
+			),
+			array (
+				'key' => 'field_597229743989b',
+				'label' => 'Heading tags to use',
+				'name' => 'otp_heading_tags',
+				'type' => 'radio',
+				'instructions' => 'Select which tags get used to generate the navigation.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_597229553989a',
+							'operator' => '!=',
+							'value' => '1',
+						),
+						array (
+							'field' => 'field_5a788d212c5ff',
+							'operator' => '==',
+							'value' => 'single_page',
 						),
 					),
 					'allorany' => 'all',
