@@ -1,7 +1,6 @@
 export default {
   init() {
     // JavaScript to be fired on this page
-	  import 'jquery';
 
 // FadeInUp script to animate list items on GRC Home page
 
