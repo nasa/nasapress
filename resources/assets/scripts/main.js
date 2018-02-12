@@ -7,6 +7,7 @@ import 'stickyfill/dist/stickyfill.min';
 /** import local dependencies */
 import Router from './util/Router';
 import common from './routes/common';
+import templateLanding from './routes/animation'
 
 /**
  * Populate Router instance with DOM routes
@@ -15,6 +16,8 @@ import common from './routes/common';
 const routes = new Router({
   /** All pages */
   common,
+	// 1x1 page
+  templateLanding,
 });
 
 /** Load Events */
