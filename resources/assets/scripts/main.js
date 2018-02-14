@@ -7,7 +7,9 @@ import 'stickyfill/dist/stickyfill.min';
 /** import local dependencies */
 import Router from './util/Router';
 import common from './routes/common';
-import templateLanding from './routes/animation'
+import templateLanding from './routes/animation';
+import './vendor/viewportchecker';
+import './util/fadeinup';
 
 /**
  * Populate Router instance with DOM routes
