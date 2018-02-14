@@ -2,16 +2,16 @@ export default {
   init() {
 
     //=====Grid/List View change in Facilities=====
-    jQuery(".gridView").hide();
+    $(".gridView").hide();
 
-    jQuery("#listButton").click(function(){
-        jQuery(".listView").show();
-        jQuery(".gridView").hide();
+    $("#listButton").click(function(){
+        $(".listView").show();
+        $(".gridView").hide();
     });
 
-    jQuery("#gridButton").click(function(){
-        jQuery(".gridView").show();
-        jQuery(".listView").hide();
+    $("#gridButton").click(function(){
+        $(".gridView").show();
+        $(".listView").hide();
     });
     //=============================================
 
