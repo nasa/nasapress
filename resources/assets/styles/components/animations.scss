@@ -1,5 +1,5 @@
-body.slug-animations { 
-	// statements go here
+// statements go here
+
 @charset "UTF-8";
 
 /*--------------------------------------------------------------
@@ -9,8 +9,8 @@ animations - various animations added
 
 /* keyframe animations used for the fadeInUp of content */
    /* this functionality also needs viewportchecker.js added to the site and fadeinup.js  */
-
-
+  
+  
 .animated {
 	-webkit-animation-duration: 1.5s;
 	   -moz-animation-duration: 1.5s;
@@ -76,5 +76,3 @@ animations - various animations added
 	-o-animation-name: fadeInUp;
 	animation-name: fadeInUp;
 }
-
-} 

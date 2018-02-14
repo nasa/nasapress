@@ -3,13 +3,12 @@ import 'jquery';
 import 'nasawds/dist/js/nasawds';
 import './vendor/anchorific';
 import 'stickyfill/dist/stickyfill.min';
+import './vendor/viewportchecker';
 
 /** import local dependencies */
 import Router from './util/Router';
 import common from './routes/common';
-import templateLanding from './routes/animation';
-import './vendor/viewportchecker';
-import './util/fadeinup';
+import home from './routes/home';
 
 /**
  * Populate Router instance with DOM routes
@@ -18,8 +17,8 @@ import './util/fadeinup';
 const routes = new Router({
   /** All pages */
   common,
-	// 1x1 page
-  templateLanding,
+	// Home page
+  home,
 });
 
 /** Load Events */
