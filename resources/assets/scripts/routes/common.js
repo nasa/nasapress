@@ -1,9 +1,24 @@
 export default {
   init() {
+
+    //=====Grid/List View change in Facilities=====
+    $(".gridView").hide();
+
+    $("#listButton").click(function(){
+        $(".listView").show();
+        $(".gridView").hide();
+    });
+
+    $("#gridButton").click(function(){
+        $(".gridView").show();
+        $(".listView").hide();
+    });
+    //=============================================
+
     // JavaScript to be fired on all pages
     var headings = $('.anchorific').data('headings');
     headings = headings ? headings : 'h2,h3,h4';
-    
+
     $('.usa-layout-docs').anchorific({
       headers: headings,
       anchorText: false,
@@ -50,7 +65,7 @@ export default {
     });
 
     $('.sticky').Stickyfill();
-    
+
     var didScroll = false;
     var topNav = $('header.usa-header');
 
@@ -59,14 +74,14 @@ export default {
     function doThisStuffOnScroll() {
       var scroll = $(window).scrollTop();
       var scrollHeight = 55;
-      
+
       if (scroll >= scrollHeight) {
         topNav.addClass('show-logo');
       }
       else {
         topNav.removeClass('show-logo');
       }
-      
+
       didScroll = true;
     }
 
@@ -75,7 +90,7 @@ export default {
         didScroll = false;
       }
     }, 500);
-    
+
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
