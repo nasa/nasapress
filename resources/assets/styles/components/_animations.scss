@@ -1,5 +1,3 @@
-// statements go here
-
 @charset "UTF-8";
 
 /*--------------------------------------------------------------
@@ -8,7 +6,7 @@ animations - various animations added
 
 
 /* keyframe animations used for the fadeInUp of content */
-   /* this functionality also needs viewportchecker.js added to the site and fadeinup.js  */
+/* this functionality also needs viewportchecker.js added to the site and fadeinup.js  */
   
   
 .animated {
@@ -78,11 +76,9 @@ animations - various animations added
 }
 
 .hidden {
-  /*visibility: hidden;*/
   opacity: 0;
 }
 
 .visible {
-  /*visibility: visible;*/
   opacity: 1;
 }
