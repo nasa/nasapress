@@ -76,3 +76,13 @@ animations - various animations added
 	-o-animation-name: fadeInUp;
 	animation-name: fadeInUp;
 }
+
+.hidden {
+  /*visibility: hidden;*/
+  opacity: 0;
+}
+
+.visible {
+  /*visibility: visible;*/
+  opacity: 1;
+}
