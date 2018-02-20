@@ -49,13 +49,13 @@
       transition: height .3s;
     }
   }
-
+  
   .usa-nav-dark {
     @include media($nav-width) {
       background: none;
     }
   }
-
+  
   .usa-logo, .usa-nav {
     @include media($nav-width) {
       transition: all .3s;
