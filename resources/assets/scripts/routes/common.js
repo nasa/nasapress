@@ -2,17 +2,20 @@ export default {
   init() {
 
     //=====Grid/List View change in Facilities=====
-    $(".gridView").hide();
+    $(".listView").hide();
 
-    $("#listButton").click(function(){
-        $(".listView").show();
+    $("#switchViewBtn").toggle(
+      function(){
         $(".gridView").hide();
-    });
-
-    $("#gridButton").click(function(){
+        $(".listView").show();
+        $("#switchViewBtn").html('<i class="fa fa-th-large" aria-hidden="true"></i> Switch to Grid View');
+      },
+      function() {
         $(".gridView").show();
         $(".listView").hide();
-    });
+        $("#switchViewBtn").html('<i class="fa fa-list" aria-hidden="true"></i> Switch to List View');
+      }
+    );
     //=============================================
 
     // JavaScript to be fired on all pages
