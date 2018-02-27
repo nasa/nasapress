@@ -28,7 +28,7 @@
 1. Test your changes locally.
 1. When you are satisfied with your change, file your [merge request](https://gitlab.grc.nasa.gov/wade/nasapress-grc/merge_requests/new) to merge into the `develop` branch on GitLab by selecting your branch as the source branch and `develop` branch as the target branch.
 1. Another developer will perform a code review and accept or reject your request. After accepting, they may do some brief testing on their local development environment.
-1. They will then merge the develop branch with the staging branch, and deploy the staging branch to the staging server.
+1. They will then merge the develop branch with the staging branch, run `yarn run build:production` on the theme, and deploy the staging branch to the staging server.
 1. They will notify you that your changes are now on the staging server.
 1. You should then perform QA on the staging server.
 1. If there are no issues in staging, they will merge staging with master, and deploy master to the production server.
