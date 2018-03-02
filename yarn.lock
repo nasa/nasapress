@@ -3900,9 +3900,9 @@ nan@^2.3.0, nan@^2.3.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
-nasawds@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/nasawds/-/nasawds-1.4.6.tgz#26bb2de96e5d78658901970b393219d18b5421db"
+nasawds@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/nasawds/-/nasawds-1.5.0.tgz#4392f6755e99942cadb8bfff6f47ddc5535b11b3"
   dependencies:
     "@types/node" "^8.5.5"
     array-filter "^1.0.0"
