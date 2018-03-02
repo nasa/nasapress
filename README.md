@@ -16,7 +16,7 @@ If you'd like your site to be added to this list please [create an issue](https:
 * [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Laravel's Blade](https://laravel.com/docs/5.3/blade) as a templating engine
-* [NASA GRC Web Design Standards](https://bruffridge.github.io/web-design-standards-docs/) based on [U.S. Web Design Standards](https://standards.usa.gov) for CSS framework
+* [NASA Glenn Web Design System](https://nasa.github.io/nasawds-site/) based on the [U.S. Web Design System](https://designsystem.digital.gov) for CSS framework
 * [Font Awesome](http://fontawesome.io/)
 
 ### Required plugins
