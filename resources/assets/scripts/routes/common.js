@@ -26,6 +26,7 @@ export default {
       headers: headings,
       anchorText: false,
       top: false,
+      exclude: '.screen-reader-text',
     });
     $('.anchorific > ul').addClass('usa-sidenav-list');
     $('.anchorific li > ul').addClass('usa-sidenav-sub_list');
