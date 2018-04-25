@@ -116,18 +116,18 @@ let webpackConfig = {
     new CopyPlugin([
       {
         context: '../../node_modules/nasawds/dist',
-        from: 'fonts/**/*'
+        from: 'fonts/**/*',
       },
       {
         context: '../../node_modules/nasawds/dist/img',
         from: '**/*',
-        to: 'images'
+        to: 'images',
       },
       {
         context: '../../node_modules/nasawds/src/js/vendor', 
         from: '**/*',
-        to: 'scripts/vendor'
-      }
+        to: 'scripts/vendor',
+      },
     ]),
     /**
      * It would be nice to switch to copy-webpack-plugin, but

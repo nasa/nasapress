@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
 	The MIT License (MIT)
 
@@ -67,7 +68,7 @@ if ( typeof Object.create !== 'function' ) {
 			spy: true, // scroll spy
 			position: 'append', // position of anchor text
 			spyOffset: !0, // specify heading offset for spy scrolling
-      exclude: '' // selector of headers to exclude
+      exclude: '', // selector of headers to exclude
 		},
 
 		build: function() {
@@ -173,7 +174,7 @@ if ( typeof Object.create !== 'function' ) {
 				e.preventDefault();
 
 				body.animate({
-					'scrollTop': 0
+					'scrollTop': 0,
 				}, self.opt.speed );
 			});
 		},
@@ -215,7 +216,7 @@ if ( typeof Object.create !== 'function' ) {
 					prev = list;
 				}
 			});
-		}
+		},
 	};
 
 	$.fn.anchorific = function( options ) {
