@@ -1,5 +1,20 @@
 .single {
   time {
-    display: block;
+    //display: block;
+  }
+}
+
+.post-meta {
+  margin-top: 0;
+  font-family: $font-sans;
+  font-size: 1.65rem;
+  time {
+    font-weight: $font-bold;
+  }
+  span {
+    color: $color-gray;
+    border-left: 2px solid $color-primary-darker;
+    padding-left: 9px;
+    margin-left: 6px;
   }
 }
