@@ -4,6 +4,8 @@
 
 <main class="usa-grid usa-section usa-content usa-layout-docs" id="main-content">
 
+
+  
   @if (!have_posts())
     <div class="usa-width-one-whole alert alert-warning">
       {{ __('Sorry, no results were found.', 'sage') }}
@@ -15,6 +17,11 @@
     <div class="usa-width-three-fourths usa-layout-docs-main_content">
   @if (have_posts())
     @include('partials.page-header')
+    @php
+      $cat = get_category( get_query_var( 'cat' ) );
+      $cat_id = $cat->cat_ID;
+      echo category_description( $cat_id ); 
+    @endphp
   @endif
   @while (have_posts()) @php(the_post())
     @include ('partials.content')
