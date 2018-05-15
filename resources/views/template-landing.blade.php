@@ -6,7 +6,7 @@
 
 @section('content')
   <main id="main-content" class="usa-content usa-layout-docs">
-    <div class="usa-overlay"></div>
+    <div class="usa-overlay">{!! do_shortcode('[smartslider3 slider='.get_field('smart_slider_id').']') !!}</div>
     @while(have_posts()) @php(the_post())
     <section class="usa-hero">
       <div class="usa-grid">
