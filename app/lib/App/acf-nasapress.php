@@ -2,7 +2,7 @@
 
 if(function_exists("register_field_group"))
 {
-  register_field_group(array (
+	register_field_group(array (
 		'id' => 'acf_navigation-options',
 		'title' => 'Navigation Options',
 		'fields' => array (
@@ -95,20 +95,6 @@ if(function_exists("register_field_group"))
 		'id' => 'acf_landing-page-settings',
 		'title' => 'Landing page settings',
 		'fields' => array (
-      array (
-				'key' => 'field_5afb3e52a18c9',
-				'label' => 'Smart Slider ID',
-				'name' => 'smart_slider_id',
-				'type' => 'number',
-				'instructions' => 'Enter the ID of the smart slider you would like to add to the background, or leave blank to use the featured image.',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'min' => 1,
-				'max' => '',
-				'step' => '',
-			),
 			array (
 				'key' => 'field_5976402d3afbf',
 				'label' => 'Leading paragraph',
