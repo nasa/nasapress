@@ -53,37 +53,64 @@ add_action ( 'edited_category', 'App\\nasa_official_save');
  function get_nasa_official($page_id) {
 	 // Get the array of categories this page is in
 	 $catArray = get_the_category($page_id);
-	 $officialIds = array();
 	 $nasaOfficial;
+   $rno = get_single_rno($catArray);
 
-	 // Loop through to find the lowest category with a NASA Official
-	 foreach($catArray as $cat) {
-		 $curCat = $cat;
-		 $catMeta = get_option("category_".$curCat->term_id);
-		 $officialId = $catMeta['nasa_official'];
+	 if(!$rno) {
+     // get nasa official of parent page
+     $page_parents = get_post_ancestors($page_id);
 
-		 // Follow the tree up until we find an official
-		 while($curCat->category_parent != 0 && !$officialId) {
-			 $curCat = $curCat->category_parent;
-			 $catMeta = get_option("category_".$curCat);
-			 $officialId = $catMeta['nasa_official'];
-		 }
-
-		 // Add to list of officials
-		 if($officialId)
-		 	array_push($officialIds, $officialId);
-	 }
-
-	 // Use default site official
-	 // TODO: This shouldn't be hard-coded...
-   // todo-config
-	 if(!count($officialIds)) {
-		 $nasaOfficial = get_user_by('login', 'YOUR_DEFAULT_USERNAME');
+     while($page_parents) {
+       $cur_parent_id = array_shift($page_parents);
+       $cur_parent_cats = get_the_category($cur_parent_id);
+       $rno = get_single_rno($cur_parent_cats);
+       if($rno) {
+         $page_parents = false;
+       }
+     }
+     
+     if(!$rno) {
+        // Use default site official
+        // TODO: This shouldn't be hard-coded...
+        // todo-config
+       get_user_by('login', 'YOUR_DEFAULT_USERNAME');
+     }
+     else {
+       $nasaOfficial = $rno;
+     }
 	 } else {
-		 $nasaOfficial = get_userdata( $officialIds[0] );
+		 $nasaOfficial = $rno;
 	 }
 
 	 // Display the official
 	 _e($nasaOfficial->display_name);
  }
+ 
+function get_single_rno($catArray) {
+  $officialIds = array();
 
+  // Loop through to find the lowest category with a NASA Official
+  foreach($catArray as $cat) {
+    $curCat = $cat;
+    $catMeta = get_option("category_".$curCat->term_id);
+    $officialId = $catMeta['nasa_official'];
+
+    // Follow the tree up until we find an official
+    while($curCat->category_parent != 0 && !$officialId) {
+      $curCat = $curCat->category_parent;
+      $catMeta = get_option("category_".$curCat);
+      $officialId = $catMeta['nasa_official'];
+    }
+
+    // Add to list of officials
+    if($officialId)
+     array_push($officialIds, $officialId);
+  }
+
+  if(!count($officialIds)) {
+    return false;
+  }
+  else {
+    return get_userdata( $officialIds[0] );
+  }
+}

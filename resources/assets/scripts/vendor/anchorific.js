@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
 	The MIT License (MIT)
 
@@ -66,7 +67,8 @@ if ( typeof Object.create !== 'function' ) {
 			top: '.top', // back to top button or link class
 			spy: true, // scroll spy
 			position: 'append', // position of anchor text
-			spyOffset: !0 // specify heading offset for spy scrolling
+			spyOffset: !0, // specify heading offset for spy scrolling
+      exclude: '', // selector of headers to exclude
 		},
 
 		build: function() {
@@ -82,7 +84,8 @@ if ( typeof Object.create !== 'function' ) {
 
 			for( var i = 0; i < self.headers.length; i++ ) {
 				obj = self.headers.eq( i );
-        if (!$(obj).data('otp-ignore')) {
+        // If an element has data="otp-ignore" or is selected by the selector specified by the anchorific exclude parameter don't add it to left nav.
+        if (!$(obj).data('otp-ignore') && !$( obj ).filter(self.opt.exclude).length) {
           self.anchor( obj );
           navigations( obj );
         }
@@ -171,7 +174,7 @@ if ( typeof Object.create !== 'function' ) {
 				e.preventDefault();
 
 				body.animate({
-					'scrollTop': 0
+					'scrollTop': 0,
 				}, self.opt.speed );
 			});
 		},
@@ -213,7 +216,7 @@ if ( typeof Object.create !== 'function' ) {
 					prev = list;
 				}
 			});
-		}
+		},
 	};
 
 	$.fn.anchorific = function( options ) {

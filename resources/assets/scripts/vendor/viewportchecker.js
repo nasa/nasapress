@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
   Version 1.3.2
   The MIT License (MIT)
@@ -21,7 +22,7 @@
     var options = {
       classToAdd: 'visible',
       offset: 100,
-      callbackFunction: function(elem){}
+      callbackFunction: function(elem){},
     };
     $.extend(options, useroptions);
 
