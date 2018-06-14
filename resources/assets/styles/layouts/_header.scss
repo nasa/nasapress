@@ -123,7 +123,6 @@
 .usa-logo-text {
   a {
     font-weight: $font-bold;
-    @include font-smoothing;
     @include media($nav-width) {
       display: block;
       width: 230px;

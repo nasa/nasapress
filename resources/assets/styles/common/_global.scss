@@ -13,11 +13,6 @@ body {
   height: auto;
 }
 
-main {
-  font-family: $font-serif;
-}
-
-
 .usa-layout-docs {
   // fixes known FF print bug caused by display: flex. https://bugzilla.mozilla.org/show_bug.cgi?id=939897
 // display: flex was used to move sidenav below main content, however we are using javascript to move it under leading paragraph so it's not needed.
@@ -29,19 +24,10 @@ main {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-sans;
-}
-
 .usa-layout-docs-main_content {
   h2, h3, h4 {
     color: $color-primary-darker;
   }
-}
-
-.usa-font-lead {
-  font-family: $font-sans;
-  font-weight: 300;
 }
 
 .usa-heading {
@@ -50,11 +36,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-subheading {
   @include h6;
-  font-family: $font-sans;
+  @include font-smoothing;
+  letter-spacing: $heading-letter-spacing;
+  font-family: $helvetica;
   color: $color-gray;
   display: block;
-  letter-spacing: 0.5px;
-  margin-bottom: 0;
+  margin-bottom: 0.3rem;
   margin-top: 0;
   &.h2 {
     margin-top: 5rem;

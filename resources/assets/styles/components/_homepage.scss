@@ -7,10 +7,8 @@ body.home {
   font-size: $h1-font-size;
 }
 
-//todo: add to nasawds and remove from here. 
 .usa-section-dark {
-  @include font-smoothing;
-  p {
+  .site-subheading {
     font-weight: bold;
   }
 }

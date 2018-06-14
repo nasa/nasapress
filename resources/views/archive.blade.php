@@ -13,7 +13,7 @@
     {!! get_search_form(false) !!}
   @endif
 
-  <aside class="usa-width-one-fourth usa-layout-docs-sidenav sticky"><p class='usa-layout-docs-sidenav-title'>On this page:</p><nav class='anchorific'></nav></aside>
+  <aside class="usa-width-one-fourth usa-layout-docs-sidenav sticky usa-serif-body"><p class='usa-layout-docs-sidenav-title'>On this page:</p><nav class='anchorific'></nav></aside>
     <div class="usa-width-three-fourths usa-layout-docs-main_content">
   @if (have_posts())
     @include('partials.page-header')
