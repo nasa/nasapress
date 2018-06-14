@@ -19,6 +19,7 @@
 }
 
 .grc-grid-item {
+  font-family: $font-serif;
   @include font-smoothing;
   position: relative;
   display: block;

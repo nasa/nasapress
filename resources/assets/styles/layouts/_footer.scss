@@ -24,15 +24,12 @@
 }
 
 .usa-footer-contact-heading {
-  font-size: 2.5rem;
-  font-weight: $font-bold;
+  @include h3;
+  @include font-smoothing;
+  font-family: $helvetica;  
   clear: both;
   line-height: $heading-line-height;
   margin-bottom: .5em
-}
-
-.usa-footer-logo-heading, .usa-footer-contact-heading {
-  @include font-smoothing;
 }
 
 .usa-link-facebook {

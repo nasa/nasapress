@@ -110,7 +110,6 @@ img.alignright {
     text-align: center;
   }
   color: $color-gray;
-  font-family: $font-sans;
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -255,7 +254,7 @@ img.alignright {
 // Yoast Breadcrumbs
 
 .breadcrumbs {
-  font-family: $font-sans;
+  margin-bottom: 1em;
 }
 
 // Responsive Video Embeds
