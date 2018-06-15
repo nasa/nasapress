@@ -1,6 +1,6 @@
 # NASAPress (a WordPress Theme)
 
-![screen shot](https://user-images.githubusercontent.com/1322063/30714364-8aedee4e-9ee0-11e7-8bf8-4ed7c37ec698.png)
+![screen shot 2018-06-15 at 12 31 39 pm](https://user-images.githubusercontent.com/1322063/41479194-64b3bab2-7098-11e8-81cf-ccf93f472f61.png)
 
 ## Sites using NASAPress
 
