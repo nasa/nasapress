@@ -34,12 +34,10 @@ body {
   color: $color-primary-darker;
 }
 
-.site-subheading {
+.site-subheading, .usa-serif-body p.site-subheading { // higher specificity needed to override .usa-serif-body p styling in nasawds
   @include h6;
-  font-size: $h6-font-size !important; // todo: remove after 2.0.5
-  line-height: $base-line-height !important; // remove after 2.0.5
   @include font-smoothing;
-  font-family: $helvetica !important; // remove !important after 2.0.5
+  font-family: $helvetica;
   color: $color-gray;
   display: block;
   margin-bottom: 0.3rem;
