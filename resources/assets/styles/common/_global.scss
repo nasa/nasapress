@@ -36,9 +36,10 @@ body {
 
 .site-subheading {
   @include h6;
+  font-size: $h6-font-size !important; // todo: remove after 2.0.5
+  line-height: $base-line-height !important; // remove after 2.0.5
   @include font-smoothing;
-  letter-spacing: $heading-letter-spacing;
-  font-family: $helvetica;
+  font-family: $helvetica !important; // remove !important after 2.0.5
   color: $color-gray;
   display: block;
   margin-bottom: 0.3rem;
