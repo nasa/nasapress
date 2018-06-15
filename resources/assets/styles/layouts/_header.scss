@@ -63,12 +63,6 @@
   }
 }
 
-@media screen and (max-width: $nav-width - 1px) {
-  .usa-nav-primary button {
-    font-size: $h4-font-size;
-  }
-}
-
 .show-logo.usa-header-basic {
   @include media($nav-width) {
     body.home &, body.template-landing & {
