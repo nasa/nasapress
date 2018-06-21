@@ -17,7 +17,7 @@ body {
   // fixes known FF print bug caused by display: flex. https://bugzilla.mozilla.org/show_bug.cgi?id=939897
 // display: flex was used to move sidenav below main content, however we are using javascript to move it under leading paragraph so it's not needed.
   display: block;
-
+  
   height: auto;
   @include media($nav-width) {
     margin-top: $header-height;
@@ -49,7 +49,7 @@ body {
 
 .site-subheading + * {
   margin-top: 0px;
-}
+} 
 
 main header {
   > h1 {
@@ -74,6 +74,23 @@ main figure:not(.gallery-item) {
   font-size: 12px;
   margin-left: 5px;
 }
-/*
-remove width inline style from figure, and width and height attributes from img.
-*/
+
+.usa-logo, .usa-footer-logo {
+  // fixes nasa meatball in logo not scaling on ie 9-11.
+  // todo: move these to nasawds and remove from here.
+  /*
+   * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+   * [1] IE9
+   * [2] IE10+
+   */
+  // 1
+  img[src*=".svg"] {
+    width: 500px\9; 
+  }
+  // 2
+  @media screen and (min-width:0\0) {
+    img[src*=".svg"] {
+      width: 500px; 
+    }
+  }
+}

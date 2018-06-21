@@ -96,18 +96,18 @@
 .usa-logo {
   img {
     vertical-align: middle;
-    width: 40px;
+    width: 40px !important;
     margin-right: 5px;
     position: relative;
     top: -2px;
     @include media($nav-width) {
       transition: all .3s;
       top: -8px;
-      width: 85px;
+      width: 85px !important;
       margin-right: 15px;
       float: left;
       .show-logo & {
-        width: 55px;
+        width: 55px !important;
         top: -2px;
       }
     }
