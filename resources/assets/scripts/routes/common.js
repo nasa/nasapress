@@ -26,6 +26,7 @@ export default {
       headers: headings,
       anchorText: false,
       top: false,
+      spyOffset: 2,
       exclude: '.screen-reader-text',
     });
     $('.anchorific > ul').addClass('usa-sidenav-list');
