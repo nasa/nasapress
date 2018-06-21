@@ -94,24 +94,6 @@
 }
 
 .usa-logo {
-  // fixes nasa meatball in logo not scaling on ie 9-11.
-  // todo: move these to nasawds and remove from here.
-  /*
-   * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
-   * [1] IE9
-   * [2] IE10+
-   */
-  // 1
-  img[src*=".svg"] {
-    width: 500px\9; 
-  }
-  // 2
-  @media screen and (min-width:0\0) {
-    img[src*=".svg"] {
-      width: 500px; 
-    }
-  }
-  
   img {
     vertical-align: middle;
     width: 40px !important;
