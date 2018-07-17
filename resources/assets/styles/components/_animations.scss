@@ -83,18 +83,11 @@ animations - various animations added
   opacity: 1;
 }
 
-.parallax { 
-background-image: url("http://grc-public.local/wp-content/uploads/star_background.jpg");
-height: 100%;
-background-attachment: fixed;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-}
+// parallax styles
 
-.parallax-content {
-width:100%;
-margin:0 auto;
-color:#FFF;
-padding-top:50px;
+.parallax {
+  background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%), $color-base url('#{$image-path}/star_background.jpg') center/cover no-repeat fixed;
+  height: 100%;
+  width:100%;
+  margin:0 auto;
 }
