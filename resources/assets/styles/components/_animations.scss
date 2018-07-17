@@ -82,3 +82,19 @@ animations - various animations added
 .visible {
   opacity: 1;
 }
+
+.parallax { 
+background-image: url("http://grc-public.local/wp-content/uploads/star_background.jpg");
+height: 100%;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.parallax-content {
+width:100%;
+margin:0 auto;
+color:#FFF;
+padding-top:50px;
+}
