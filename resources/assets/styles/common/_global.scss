@@ -107,3 +107,13 @@ main figure:not(.gallery-item) {
     }
   }
 }
+
+.usa-serif-body {
+  p:not(.usa-font-lead),
+  ul:not(.usa-accordion):not(.usa-accordion-bordered),
+  ol:not(.usa-accordion):not(.usa-accordion-bordered) {
+    font-family: $font-serif;
+    font-size: $base-font-size - .2rem;
+    line-height: $base-line-height + .2;
+  }
+}
