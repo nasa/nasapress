@@ -94,26 +94,3 @@ main figure:not(.gallery-item) {
     }
   }
 }
-
-.usa-content {
-  p,
-  ul:not(.usa-accordion):not(.usa-accordion-bordered),
-  ol:not(.usa-accordion):not(.usa-accordion-bordered) {
-    max-width: $text-max-width;
-    // fixes ch unit discrepancy in IE. https://caniuse.com/#feat=ch-unit
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      /* IE10+ CSS styles go here */
-      max-width: $text-max-width * 1.21212121212;
-    }
-  }
-}
-
-.usa-serif-body {
-  p:not(.usa-font-lead),
-  ul:not(.usa-accordion):not(.usa-accordion-bordered),
-  ol:not(.usa-accordion):not(.usa-accordion-bordered) {
-    font-family: $font-serif;
-    font-size: $base-font-size - .2rem;
-    line-height: $base-line-height + .2;
-  }
-}
