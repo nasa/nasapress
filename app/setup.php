@@ -174,4 +174,13 @@ require_once 'lib/App/child-navigation.php';
 
 add_image_size( 'medium_large', '768', '0', false ); 
 add_image_size( 'medium_large', '768', '0', false ); 
-add_image_size( 'portrait-thumb', '230', '300', array( "center", "top") ); 
+add_image_size( 'portrait-thumb', '230', '300', array( "center", "top") );
+
+/**
+ * remove pages from archive.php
+ */
+add_action('pre_get_posts', function ($query) {
+  if(is_archive()) {
+    $query->set('post_type','post');
+  }
+});

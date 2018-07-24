@@ -225,6 +225,17 @@ img.alignright {
 	}
 }
 
+.posts-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.posts-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
 // highlight current menu item
 .usa-nav-primary a.usa-current {
   @include media($nav-width) {
