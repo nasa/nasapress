@@ -2,7 +2,9 @@ export default {
   init() {
 
     //=====Grid/List View change in Facilities=====
-    $(".listView").hide();
+    if($("#switchViewBtn").length) {
+      $(".listView").hide();
+    }
 
     $("#switchViewBtn").toggle(
       function(){
