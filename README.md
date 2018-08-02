@@ -1,6 +1,6 @@
 # NASAPress (a WordPress Theme)
 
-## Sites using NASAPress
+## Sites using NASAPress.
 
 If you'd like your site to be added to this list please [create an issue](https://github.com/nasa/nasapress/issues/new) with your website name and URL.
 
