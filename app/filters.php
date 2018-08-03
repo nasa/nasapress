@@ -30,7 +30,7 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+    return ' &hellip; <a href="' . get_permalink() . '">' . __('Read the rest &#8674;', 'sage') . '</a>';
 });
 
 // Don't autoformat the home page.
@@ -65,14 +65,17 @@ add_filter('the_content', 'App\\remove_empty_p', 14, 1);
 * @Tested on: WordPress version 3.3.1
 ****************************************************************************/
 
-function wp_strip_header_tags( $text ) {
+function build_the_excerpt( $text ) {
+    global $post;
   $raw_excerpt = $text;
   if ( '' == $text ) {
-    //Retrieve the post content.
-    $text = get_the_content('');
+    // Use leading paragraph acf field if set and page is using the landing page template, otherwise use the_content
+    $text = get_page_template_slug($post->ID) == 'views/template-landing.blade.php' && get_field('lpt_leading_paragraph', $post->ID) ? get_field('lpt_leading_paragraph', $post->ID) : get_the_content('');
+
     //remove shortcode tags from the given content.
     $text = strip_shortcodes( $text );
-    $text = apply_filters('the_content', $text);
+    $text = apply_filters('the_content', $text . '<!--noyarpp-->'); // Don't add YARPP section to excerpt
+    $text = str_replace('<!--noyarpp-->', '', $text);
     $text = str_replace(']]>', ']]&gt;', $text);
 
     //Regular expression that strips the header tags and their content.
@@ -91,7 +94,7 @@ function wp_strip_header_tags( $text ) {
   }
   return apply_filters('wp_trim_excerpt', $excerpt, $raw_excerpt);
 }
-add_filter( 'get_the_excerpt', 'App\\wp_strip_header_tags', 5);
+add_filter( 'get_the_excerpt', 'App\\build_the_excerpt', 5);
 
 /**
  * Template Hierarchy should search for .blade.php files
