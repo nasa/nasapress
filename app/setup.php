@@ -171,6 +171,7 @@ require_once 'lib/App/NASAWDSBasicNavwalker.php';
 require_once 'lib/App/acf-nasapress.php';
 require_once 'lib/App/nasa-official.php';
 require_once 'lib/App/child-navigation.php';
+require_once 'lib/App/environment.php';
 
 add_image_size( 'medium_large', '768', '0', false ); 
 add_image_size( 'medium_large', '768', '0', false ); 
@@ -183,4 +184,27 @@ add_action('pre_get_posts', function ($query) {
   if(is_archive()) {
     $query->set('post_type','post');
   }
+});
+
+add_action('after_setup_theme', function () {
+    if( environment() == 'development' && null == username_exists( 'admin' ) ) {
+
+        require 'lib/App/conf/dev-admin-pw.php';
+
+        // Generate the password and create the user
+        $user_id = wp_create_user( 'admin', $dev_admin_pw, 'admin@grcpublic.local' );
+      
+        // Set the nickname
+        wp_update_user(
+          array(
+            'ID'          =>    'admin',
+            'nickname'    =>    'admin'
+          )
+        );
+      
+        // Set the role
+        $user = new \WP_User( 'admin' );
+        $user->set_role( 'administrator' );
+      
+    } // end if
 });
