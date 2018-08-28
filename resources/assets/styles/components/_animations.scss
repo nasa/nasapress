@@ -95,3 +95,7 @@ animations - various animations added
 .parallax-ohio {
   background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .4) 30%, rgba(0, 0, 0, 0) 50%), $color-base url('#{$image-path}/cleveland_at_night.jpg') center/cover no-repeat fixed;
 }
+
+.parallax-benefits {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, .6) 30%, rgba(0, 0, 0, 0) 50%), $color-base url('#{$image-path}/grc-benefits.jpg') center/cover no-repeat fixed;
+}
