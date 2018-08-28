@@ -51,40 +51,47 @@ add_action ( 'edited_category', 'App\\nasa_official_save');
  * Retrieve NASA Official for a page
  */
  function get_nasa_official($page_id) {
-	 // Get the array of categories this page is in
-	 $catArray = get_the_category($page_id);
-	 $nasaOfficial;
-   $rno = get_single_rno($catArray);
+   $nasaOfficial = get_field('nasa_official');
 
-	 if(!$rno) {
-     // get nasa official of parent page
-     $page_parents = get_post_ancestors($page_id);
+   if ( $nasaOfficial ) {
+      $nasaOfficial = $nasaOfficial['display_name'];
+   }
+   else {
+      // Get the array of categories this page is in
+      $catArray = get_the_category($page_id);
+      
+      $rno = get_single_rno($catArray);
 
-     while($page_parents) {
-       $cur_parent_id = array_shift($page_parents);
-       $cur_parent_cats = get_the_category($cur_parent_id);
-       $rno = get_single_rno($cur_parent_cats);
-       if($rno) {
-         $page_parents = false;
-       }
-     }
-     
-     if(!$rno) {
-        // Use default site official
-        // TODO: This shouldn't be hard-coded...
-        // todo-config
-       $nasaOfficial = get_user_by('login', 'rkurak');
-     }
-     else {
-       $nasaOfficial = $rno;
-     }
-		 
-	 } else {
-		 $nasaOfficial = $rno;
-	 }
+      if(!$rno) {
+        // get nasa official of parent page
+        $page_parents = get_post_ancestors($page_id);
 
-	 // Display the official
-	 _e($nasaOfficial->display_name);
+        while($page_parents) {
+          $cur_parent_id = array_shift($page_parents);
+          $cur_parent_cats = get_the_category($cur_parent_id);
+          $rno = get_single_rno($cur_parent_cats);
+          if($rno) {
+            $page_parents = false;
+          }
+        }
+        
+        if(!$rno) {
+            // Use default site official
+            // TODO: This shouldn't be hard-coded...
+            // todo-config
+          $nasaOfficial = get_user_by('login', 'rkurak');
+        }
+        else {
+          $nasaOfficial = $rno;
+        }
+        
+      } else {
+        $nasaOfficial = $rno;
+      }
+      $nasaOfficial = $nasaOfficial->display_name;
+   }
+   // Display the official
+	 _e($nasaOfficial);
  }
  
 function get_single_rno($catArray) {
