@@ -77,7 +77,7 @@ Install Composer dependencies:
 $ composer install
 ```
 
-Run `yarn` from the theme directory to install dependencies. If you won't be making changes to the theme's source code then run `yarn install --production`.
+Run `yarn` from the theme directory to install dependencies. If you won't be making changes to the theme's static assets (css, javascript, images) then run `yarn install --production`.
 
 Update `resources/assets/config.json` settings:
   * `devUrl` should reflect your local development hostname
