@@ -27,6 +27,11 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+// remove external link icon from grid items.
+.grc-grid-item.usa-external_link::after {
+  display: none;
+}
+
 .grc-grid-item-image {
   display: block;
   width: 100%;
