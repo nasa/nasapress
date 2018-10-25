@@ -10,6 +10,11 @@
   font-size: 1.7rem;
 }
 
+$image-path: '~nasawds/dist/img';
 .usa-sidenav-list a {
   cursor: pointer;
+  &.usa-external_link {
+    @include external-link(external-link-black, external-link);
+  }
 }
+$image-path: '../images';

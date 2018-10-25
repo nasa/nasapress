@@ -3,7 +3,7 @@
 namespace App;
 
 function wpb_list_child_pages() { 
-  global $post; 
+  global $post;
 
   $childpages = wp_list_pages( 'sort_column=menu_order&depth=1&title_li=&child_of=' . $post->ID . '&echo=0' );
   
@@ -15,5 +15,5 @@ function wpb_list_child_pages() {
     $string = '<ul class="usa-sidenav-list">' . $childpages . '</ul>';
   }
 
-  return $string; 
+  return bwp_external_links($string); 
 }
