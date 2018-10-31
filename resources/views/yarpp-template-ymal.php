@@ -8,8 +8,17 @@ Description: Related posts for NASAPress.
 <?php if (have_posts()):?>
 <h2 data-otp-ignore='true'>You Might Also Like</h2>
 <ul>
-	<?php while (have_posts()) : the_post(); ?>
-	<li><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><!-- (<?php the_score(); ?>)--></li>
-	<?php endwhile; ?>
+	<?php
+		$relatedPosts = '';
+		while (have_posts()) : the_post();
+		$relatedPosts .= '<li><a href="' . get_the_permalink() . '" rel="bookmark">' . get_the_title() . '</a><!-- (' . get_the_score() . ')--></li>';
+		endwhile;
+
+		if(function_exists('bwp_external_links')) {
+			$relatedPosts = bwp_external_links($string);
+		}
+
+		echo $relatedPosts;
+	?>
 </ul>
 <?php endif; ?>
