@@ -13,7 +13,11 @@ Description: Related posts for NASAPress.
 		while (have_posts()) : the_post();
 		$relatedPosts .= '<li><a href="' . get_the_permalink() . '" rel="bookmark">' . get_the_title() . '</a><!-- (' . get_the_score() . ')--></li>';
 		endwhile;
-		$relatedPosts = bwp_external_links($relatedPosts);
+
+		if(function_exists('bwp_external_links')) {
+			$relatedPosts = bwp_external_links($string);
+		}
+
 		echo $relatedPosts;
 	?>
 </ul>

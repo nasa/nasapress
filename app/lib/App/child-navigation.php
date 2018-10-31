@@ -15,5 +15,9 @@ function wpb_list_child_pages() {
     $string = '<ul class="usa-sidenav-list">' . $childpages . '</ul>';
   }
 
-  return bwp_external_links($string); 
+  if(function_exists('bwp_external_links')) {
+    $string = bwp_external_links($string);
+  }
+
+  return $string
 }
