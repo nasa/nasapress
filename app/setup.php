@@ -181,7 +181,7 @@ add_image_size( 'portrait-thumb', '230', '300', array( "center", "top") );
  * remove pages from archive.php
  */
 add_action('pre_get_posts', function ($query) {
-  if(is_archive()) {
+  if(is_archive() && $query->is_main_query()) {
     $query->set('post_type','post');
   }
 });
