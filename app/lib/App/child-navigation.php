@@ -19,5 +19,5 @@ function wpb_list_child_pages() {
     $string = bwp_external_links($string);
   }
 
-  return $string
+  return $string;
 }
