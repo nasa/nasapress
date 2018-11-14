@@ -202,8 +202,12 @@ add_action('template_redirect', function () {
                 $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
                 $uri_segments = explode('/', $uri_path);
 
+                if(environment() == 'test') {
+                    array_shift($uri_segments);
+                }
+
                 // If the requested url starts with /category_base/ look for an author or post instead.
-                if ($uri_segments[1] && $uri_segments[1] == $categoryBaseName) {
+                if (is_array($uri_segments) && $uri_segments[1] && $uri_segments[1] == $categoryBaseName) {
 
                     // check for post
                     global $wp_query;
