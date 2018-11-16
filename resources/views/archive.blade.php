@@ -11,7 +11,7 @@
     {{ __('Sorry, this topic as no posts.', 'sage') }}
     </p>
     <h3>Search this site:</h3>
-    @include('partials.search')
+    @include('partials.search', ['thisSite' => true])
   </div>
 
   @else
