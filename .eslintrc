@@ -22,7 +22,7 @@
     "sourceType": "module"
   },
   "plugins": [
-    "import",
+    "import"
   ],
   "settings": {
     "import/core-modules": [],
