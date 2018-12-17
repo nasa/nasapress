@@ -240,5 +240,3 @@ add_action('template_redirect', function () {
         unset($currentURI);
     }
 });
-
-});
