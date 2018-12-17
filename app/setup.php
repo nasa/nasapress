@@ -177,10 +177,68 @@ add_image_size( 'medium_large', '768', '0', false );
 add_image_size( 'portrait-thumb', '230', '300', array( "center", "top") );
 
 /**
- * remove pages from archive.php
+ * don't display pages on archive pages
  */
 add_action('pre_get_posts', function ($query) {
-  if(is_archive()) {
+  if(is_archive() && $query->is_main_query()) {
     $query->set('post_type','post');
   }
+});
+
+/**
+ * Fix 404 for post permalinks using category_base
+ * https://wordpress.stackexchange.com/questions/98083/how-to-get-permalinks-with-category-base-working-with-sub-categories/98095#98095
+ */
+add_action('template_redirect', function () {
+    
+    // Only check on 404's
+    if ( is_404() ) {
+        $currentURI = !empty($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '/') : '';
+        if ($currentURI) {
+            $categoryBaseName = trim(get_option('category_base'), '/.'); // Remove / and . from base
+            if ($categoryBaseName) {
+
+                $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+                $uri_segments = explode('/', $uri_path);
+
+                if(environment() == 'test') {
+                    array_shift($uri_segments);
+                }
+
+                // If the requested url starts with /category_base/ look for an author or post instead.
+                if (is_array($uri_segments) && $uri_segments[1] && $uri_segments[1] == $categoryBaseName) {
+
+                    // check for post
+                    global $wp_query;
+                    $args = array(
+                        'post_type' => 'post',
+                        'name' => $wp_query->query_vars['category_name']
+                    );
+
+                    // check for author if url starts with /posts/author/
+                    global $wp_rewrite;
+                    if($uri_segments[2] && $uri_segments[2] == $wp_rewrite->author_base) {
+                        $args = array(
+                            'author_name' => $wp_query->query_vars['category_name']
+                        );
+                    }
+
+                    $posts = $wp_query->query($args);
+
+                    if(is_array($posts) && count($posts) >= 1) {
+                        status_header( 200 ); // found post or author
+                    }
+                    else {
+                        $wp_query->set_404(); // didn't find any
+                    }
+                    unset($args);
+                }
+                unset($uri_path, $uri_segments);
+            }
+            unset($categoryBaseName);
+        }
+        unset($currentURI);
+    }
+});
+
 });

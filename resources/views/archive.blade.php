@@ -5,16 +5,20 @@
 <main class="usa-grid usa-section usa-content usa-layout-docs" id="main-content">
   
   @if (!have_posts())
-    <div class="usa-width-one-whole alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
-    </div>
-    {!! get_search_form(false) !!}
-  @endif
+
+  <div class="usa-width-one-whole alert alert-warning">
+    <p class="usa-font-lead">
+    {{ __('Sorry, this topic as no posts.', 'sage') }}
+    </p>
+    <h3>Search this site:</h3>
+    @include('partials.search', ['thisSite' => true])
+  </div>
+
+  @else
 
   <aside class="usa-width-one-fourth usa-layout-docs-sidenav sticky usa-serif-body"><p class='usa-layout-docs-sidenav-title'>On this page:</p><nav class='anchorific'></nav></aside>
-    <div class="usa-width-three-fourths usa-layout-docs-main_content">
+  <div class="usa-width-three-fourths usa-layout-docs-main_content">
   @if (have_posts())
-    @include('partials.page-header')
     @php
       $cat = get_category( get_query_var( 'cat' ) );
       $cat_id = $cat->cat_ID;
@@ -26,6 +30,9 @@
   @endwhile
 
   {!! get_the_posts_navigation() !!}
-    </div>
+  </div>
+
+  @endif
+
 </main>
 @endsection
