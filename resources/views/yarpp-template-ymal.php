@@ -15,7 +15,7 @@ Description: Related posts for NASAPress.
 		endwhile;
 
 		if(function_exists('bwp_external_links')) {
-			$relatedPosts = bwp_external_links($string);
+			$relatedPosts = bwp_external_links($relatedPosts);
 		}
 
 		echo $relatedPosts;
