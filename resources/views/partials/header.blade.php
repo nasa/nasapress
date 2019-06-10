@@ -5,9 +5,18 @@
       <div class="usa-logo" id="logo">
         <em class="usa-logo-text">
           <a href="{{ esc_url(home_url('/')) }}" accesskey="1" title="Home" aria-label="Home">
-            <img src="@asset('images/logo-nasa.svg')" alt="NASA logo">
+			@php
+			  $custom_logo_id = get_theme_mod( 'custom_logo' );
+			  $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
+			  echo '<img src="' . esc_url( $custom_logo_url ) . '" alt="Site Logo">';
+			@endphp
             <!-- todo-config -->
-            <span class="usa-logo-main-text">Glenn </span><br/>Research Center</a>
+			  @php
+			    $site_title = get_bloginfo( 'name');
+			    $first_word = strstr( $site_title, ' ', true );
+			    $remaining_title = strstr($site_title, ' ');
+			    echo '<span class="usa-logo-main-text">' . $first_word . '</span><br>' . $remaining_title . '</a>';
+			  @endphp
         </em>
       </div>
       <button class="usa-menu-btn">Menu</button>
@@ -30,7 +39,6 @@
           ));
         endif;
       @endphp
-      @include('partials.search')
     </nav>
   </div>
 </header>
