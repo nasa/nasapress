@@ -9,6 +9,8 @@ function environment() {
         switch($svrname) {
             case 'www1.grc.nasa.gov':
                 return 'production';
+            case 'nasapress.grc.nasa.gov':
+                return 'demo';
             case 'ewwwd1.grc.nasa.gov/wordpress':
                 return 'test';
             default:
