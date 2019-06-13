@@ -1,13 +1,13 @@
 <?php
 
 // Adds widget: NASA Center Information
-class Nasacenterinformatio_Widget extends WP_Widget {
+class centerinformation_Widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct(
 			'nasacenterinformatio_widget',
 			esc_html__( 'NASA Center Information', 'textdomain' ),
-			array( 'description' => esc_html__( 'Add your NASA Centers information to your NASAPress WordPress Site.', 'textdomain' ), ) // Args
+			array( 'description' => esc_html__( 'Add your NASA Centers information to your NASAPress WordPress Site.'), ) // Args
 		);
 	}
 
@@ -85,8 +85,8 @@ class Nasacenterinformatio_Widget extends WP_Widget {
 	}
 }
 
-function register_nasacenterinformatio_widget() {
-    register_widget( __NAMESPACE__ . '\\Nasacenterinformatio_Widget' );
+function register_centerinformation_widget() {
+    register_widget( __NAMESPACE__ . '\\centerinformation_Widget' );
 } 
 
-add_action('widgets_init', __NAMESPACE__ . '\\register_nasacenterinformatio_widget');
+add_action('widgets_init', __NAMESPACE__ . '\\register_centerinformation_widget');

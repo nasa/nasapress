@@ -4978,7 +4978,7 @@ ul.usa-footer-primary-content:last-child {
 .usa-footer-secondary_section {
   background-color: #d6d7d9;
   padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 .usa-footer-secondary_section a {
   color: #212121;
@@ -5585,7 +5585,6 @@ fieldset {
 .usa-hero {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-image: url(../vendor/hero_544cee01.png);
   background-position: 50%;
   background-size: cover;
 }
@@ -6995,15 +6994,13 @@ h2 + .grc-list {
   .usa-layout-docs-main_content .grc-grid-view-links,
   .usa-layout-docs-main_content h2,
   .usa-layout-docs-main_content h3,
-  .usa-layout-docs-main_content h4,
-  body.home main .usa-section h2 {
+  .usa-layout-docs-main_content h4 {
     clear: none;
   }
   .usa-layout-docs-main_content .grc-grid-view-links:before,
   .usa-layout-docs-main_content h2:before,
   .usa-layout-docs-main_content h3:before,
-  .usa-layout-docs-main_content h4:before,
-  body.home main .usa-section h2:before {
+  .usa-layout-docs-main_content h4:before {
     content: " ";
     display: block;
     height: 77px;
@@ -7014,36 +7011,36 @@ h2 + .grc-list {
   .admin-bar .usa-layout-docs-main_content h2:before,
   .admin-bar .usa-layout-docs-main_content h3:before,
   .admin-bar .usa-layout-docs-main_content h4:before,
-  .admin-bar body.home main .usa-section h2:before {
+  .admin-bar body main .usa-section h2:before {
     height: 109px;
     margin-top: -109px;
   }
   .usa-layout-docs-main_content a,
-  body.home main a {
+  body main a {
     position: relative;
     z-index: 1;
   }
 }
-body.home .usa-hero {
+body .usa-hero {
   background: -webkit-linear-gradient(
       top,
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7)
     ),
-    #212121 url(../images/bli_grc_da1b6bf2.jpg) 50% / cover;
+    #212121 50% / cover;
   background: -o-linear-gradient(
       top,
       rgba(0, 0, 0, 0.7) 0,
       rgba(0, 0, 0, 0.7) 100%
     ),
-    #212121 url(../images/bli_grc_da1b6bf2.jpg) 50% / cover;
+    #212121 50% / cover;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    #212121 url(../images/bli_grc_da1b6bf2.jpg) 50% / cover;
+    #212121 50% / cover;
   color: #f1f1f1;
   height: 100%;
 }
 @media screen and (min-width: 1095px) {
-  body.home .usa-hero {
+  body .usa-hero {
     background: -webkit-linear-gradient(
         top,
         rgba(0, 0, 0, 0.8),
@@ -7053,7 +7050,7 @@ body.home .usa-hero {
       ),
       -webkit-radial-gradient(100% 100% farthest-corner, transparent 0, transparent
             45%, rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.8) 100%),
-      #212121 url(../images/bli_grc_da1b6bf2.jpg) 0 40%/170%;
+      #212121 0 40%/170%;
     background: -o-linear-gradient(
         top,
         rgba(0, 0, 0, 0.8) 0,
@@ -7063,7 +7060,7 @@ body.home .usa-hero {
       ),
       -o-radial-gradient(100% 100% farthest-corner, transparent 0, transparent
             45%, rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.8) 100%),
-      #212121 url(../images/bli_grc_da1b6bf2.jpg) 0 40%/170%;
+      #212121 0 40%/170%;
     background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.8),
@@ -7078,170 +7075,36 @@ body.home .usa-hero {
         rgba(0, 0, 0, 0.6) 55%,
         rgba(0, 0, 0, 0.8) 100%
       ),
-      #212121 url(../images/bli_grc_da1b6bf2.jpg) 0 40%/170%;
+      #212121 0 40%/170%;
     padding-top: 17rem;
-    height: 1000px;
   }
 }
-body.home .usa-hero h1 {
+body .usa-hero h1 {
   margin-bottom: 20px !important;
   color: #9bdaf1;
 }
-body.home .usa-hero .usa-font-lead {
+body .usa-hero .usa-font-lead {
   margin-bottom: 5rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
 @media screen and (min-width: 1095px) {
-  body.home .usa-hero .usa-font-lead {
+  body .usa-hero .usa-font-lead {
     font-size: 2.5rem;
     margin-bottom: 7rem;
   }
 }
-body.home .usa-section h2 {
-  margin-bottom: 0.5em !important;
-  font-size: 4.4rem;
-}
-body.home .usa-section-dark .site-subheading {
-  font-weight: 700;
-}
-body.home .usa-section:not(.usa-section-dark) {
-  background-color: #f1f1f1;
-}
-body.home .usa-section:not(.usa-section-dark) h2 {
-  color: #0b3d91;
-}
-body.home .usa-graphic_list .usa-font-lead {
-  margin-bottom: 65px;
-}
-body.home .usa-graphic_list-mars {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/mars-rover-tracks_2a9950e5.jpg) 0 0 / cover;
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/mars-rover-tracks_2a9950e5.jpg) 0 0 / cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/mars-rover-tracks_2a9950e5.jpg) 0 0 / cover;
-}
-body.home .usa-graphic_list-aero {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../images/aero_6b300e39.jpeg) 50% 50% / cover;
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../images/aero_6b300e39.jpeg) 50% 50% / cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../images/aero_6b300e39.jpeg) 50% 50% / cover;
-}
-body.home .usa-graphic_list-facilities {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../images/bli_grc_da1b6bf2.jpg) 50% 50% / cover;
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../images/bli_grc_da1b6bf2.jpg) 50% 50% / cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(../images/bli_grc_da1b6bf2.jpg) 50% 50% / cover;
-}
-body.home .usa-footer {
-  background-color: #f1f1f1;
-}
-body.home .usa-button .fa-external-link {
-  font-size: 11px;
-}
-body.home .usa-external_link:after {
-  display: none;
-}
-body.home .usa-hero .video-container iframe {
-  padding: 4px;
-  background-color: #dce4ef;
-}
-body.template-landing .usa-hero {
-  background: -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),
-    #212121 url(../images/bli_grc_da1b6bf2.jpg) 50% / cover;
-  background: -o-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.7) 0,
-      rgba(0, 0, 0, 0.7) 100%
-    ),
-    #212121 url(../images/bli_grc_da1b6bf2.jpg) 50% / cover;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    #212121 url(../images/bli_grc_da1b6bf2.jpg) 50% / cover;
-  color: #f1f1f1;
-  height: 100%;
-}
-@media screen and (min-width: 1095px) {
-  body.template-landing .usa-hero {
-    background: -webkit-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8) 10.5rem,
-        rgba(0, 0, 0, 0.8) 0,
-        transparent 25rem
-      ),
-      -webkit-radial-gradient(100% 100% farthest-corner, transparent 0, transparent
-            45%, rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.8) 100%),
-      #212121 url(../images/bli_grc_da1b6bf2.jpg) 0 40%/170%;
-    background: -o-linear-gradient(
-        top,
-        rgba(0, 0, 0, 0.8) 0,
-        rgba(0, 0, 0, 0.8) 10.5rem,
-        rgba(0, 0, 0, 0.8) 10.5rem,
-        transparent 25rem
-      ),
-      -o-radial-gradient(100% 100% farthest-corner, transparent 0, transparent
-            45%, rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.8) 100%),
-      #212121 url(../images/bli_grc_da1b6bf2.jpg) 0 40%/170%;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.8) 10.5rem,
-        rgba(0, 0, 0, 0.8) 0,
-        transparent 25rem
-      ),
-      radial-gradient(
-        farthest-corner at 100% 100%,
-        transparent 0,
-        transparent 45%,
-        rgba(0, 0, 0, 0.6) 55%,
-        rgba(0, 0, 0, 0.8) 100%
-      ),
-      #212121 url(../images/bli_grc_da1b6bf2.jpg) 0 40%/170%;
-    padding-top: 17rem;
-    height: 1000px;
-  }
-}
-body.template-landing .usa-hero h1 {
-  margin-bottom: 20px !important;
-  color: #9bdaf1;
-}
-body.template-landing .usa-hero .usa-font-lead {
-  margin-bottom: 5rem;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-}
-@media screen and (min-width: 1095px) {
-  body.template-landing .usa-hero .usa-font-lead {
-    font-size: 2.5rem;
-    margin-bottom: 7rem;
-  }
-}
-@media screen and (min-width: 1095px) {
-  body.template-landing .usa-hero {
-    height: 800px;
-  }
-}
-body.template-landing .usa-hero a {
+body .usa-hero a {
   color: #d6d7d9;
 }
-body.template-landing .usa-hero a:active,
-body.template-landing .usa-hero a:hover,
-body.template-landing .usa-hero a:visited {
+body .usa-hero a:active,
+body .usa-hero a:hover,
+body .usa-hero a:visited {
   color: #aeb0b5;
 }
 @media screen and (min-width: 1095px) {
-  body.template-landing .usa-layout-docs {
+  body .usa-layout-docs {
     margin-top: 0;
   }
 }
@@ -7981,7 +7844,7 @@ body div#ui-datepicker-div[style] {
   display: none;
 }
 .usa-nav-container {
-  max-width: 1100px;
+  max-width: 1500px;
 }
 .usa-header-basic {
   border-bottom: none;
@@ -7990,9 +7853,6 @@ body div#ui-datepicker-div[style] {
   .usa-header-basic {
     position: fixed;
     top: 0;
-  }
-  body.home .usa-header-basic,
-  body.template-landing .usa-header-basic {
     -webkit-transition: background 0.3s;
     -o-transition: background 0.3s;
     transition: background 0.3s;
@@ -8024,8 +7884,7 @@ body div#ui-datepicker-div[style] {
   }
 }
 @media screen and (min-width: 1095px) {
-  body.home .show-logo.usa-header-basic,
-  body.template-landing .show-logo.usa-header-basic {
+  .show-logo.usa-header-basic {
     background: rgba(0, 0, 0, 0.8);
   }
 }
