@@ -1,24 +1,15 @@
 'use strict'; // eslint-disable-line
 
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { default: ImageminPlugin } = require('imagemin-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
-const cssnano = require('cssnano');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = require('./config');
 
 module.exports = {
   plugins: [
-    new OptimizeCssAssetsPlugin({
-      cssProcessor: cssnano,
-      cssProcessorOptions: {
-        discardComments: { removeAll: true },
-        autoprefixer: { browsers: config.browsers },
-      },
-      canPrint: true,
-    }),
     new ImageminPlugin({
-      optipng: { optimizationLevel: 7 },
+      optipng: { optimizationLevel: 2 },
       gifsicle: { optimizationLevel: 3 },
       pngquant: { quality: '65-90', speed: 4 },
       svgo: {
@@ -30,6 +21,15 @@ module.exports = {
       },
       plugins: [imageminMozjpeg({ quality: 75 })],
       disable: (config.enabled.watcher),
+    }),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        ecma: 5,
+        compress: {
+          warnings: true,
+          drop_console: true,
+        },
+      },
     }),
   ],
 };

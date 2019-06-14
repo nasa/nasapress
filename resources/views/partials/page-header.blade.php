@@ -1,3 +1,3 @@
 <header>
-  <h1>{!! App\title() !!}</h1>
+  <h1>{!! App::title() !!}</h1>
 </header>

@@ -1,9 +1,8 @@
 <!doctype html>
-<!--[if lt IE 9]><html class="lt-ie9" @php(language_attributes())><![endif]-->
-<!--[if gt IE 8]><!--><html @php(language_attributes())><!--<![endif]-->
+<html {!! get_language_attributes() !!}>
   @include('partials.head')
-  <body @php(body_class())>
-    @php(do_action('get_header'))
+  <body @php body_class() @endphp>
+    @php do_action('get_header') @endphp
     @include('partials.header')
     <div class="usa-overlay"></div>
 
@@ -14,8 +13,8 @@
         @include('partials.sidebar')
       </aside>
     @endif
-    @php(do_action('get_footer'))
+    @php do_action('get_footer') @endphp
     @include('partials.footer')
-    @php(wp_footer())
+    @php wp_footer() @endphp
   </body>
 </html>

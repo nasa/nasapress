@@ -1,23 +1,23 @@
-/** import external dependencies */
+// import external dependencies
 import 'jquery';
 import 'nasawds/dist/js/nasawds';
 import './vendor/anchorific';
 import 'stickyfill/dist/stickyfill.min';
 import './vendor/viewportchecker';
 
-/** import local dependencies */
+// Import everything from autoload
+import './autoload/**/*'
+
+// import local dependencies
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 
-/**
- * Populate Router instance with DOM routes
- * @type {Router} routes - An instance of our router
- */
+/** Populate Router instance with DOM routes */
 const routes = new Router({
-  /** All pages */
+  // All pages
   common,
-	// Home page
+  // Home page
   home,
 });
 
