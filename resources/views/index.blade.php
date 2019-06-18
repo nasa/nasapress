@@ -2,7 +2,7 @@
 
 @section('content')
 
-<main class="usa-grid usa-section usa-content usa-layout-docs" id="main-content">
+<main class="usa-grid usa-section usa-content usa-layout-docs no-hero" id="main-content">
 
   @if (!have_posts())
     <div class="usa-width-one-whole alert alert-warning">

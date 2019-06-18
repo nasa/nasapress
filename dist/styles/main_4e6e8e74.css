@@ -7108,6 +7108,11 @@ body .usa-hero a:visited {
     margin-top: 0;
   }
 }
+@media screen and (min-width: 1095px) {
+  body .no-hero {
+    margin-top: 12rem;
+  }
+}
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;

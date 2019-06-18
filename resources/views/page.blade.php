@@ -4,9 +4,8 @@
 @if ( trim(get_post_meta(get_the_ID(), 'options_display_hero', true)) == 'Yes' )
 <main id="main-content" class="usa-content usa-layout-docs">
 @else
-<main id="main-content" class="usa-content usa-layout-docs" style="padding-top: 15rem;">
+<main id="main-content" class="usa-content usa-layout-docs no-hero">
 @endif
-  <div class="usa-overlay"></div>
   @while(have_posts()) @php(the_post())
   @if ( trim(get_post_meta(get_the_ID(), 'options_display_hero', true)) == 'Yes' )
   <section class="usa-hero"
