@@ -55,7 +55,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, ['helpers', 'setup', 'filters']);
 
 /**
  * Here's what's happening with these hooks:
@@ -75,7 +75,8 @@ array_map(function ($file) use ($sage_error) {
  * └── TEMPLATEPATH           -> /srv/www/example.com/current/web/app/themes/sage/resources
  */
 if (is_customize_preview() && isset($_GET['theme'])) {
-    $sage_error(__('Theme must be activated prior to using the customizer.', 'sage'));
+    $message = "<h1>WARNING</h1><p>You must use the Customize link under the Appearence section of the dashboard to modify this theme's appearence.</p>";
+    wp_die($message, 'WARNING');
 }
 $sage_views = basename(dirname(__DIR__)).'/'.basename(__DIR__).'/views';
 add_filter('stylesheet', function () use ($sage_views) {
