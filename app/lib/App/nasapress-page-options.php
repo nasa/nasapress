@@ -9,6 +9,16 @@ class nasapresspageoptionsMetabox {
 
 	private $meta_fields = array(
 		array(
+			'label' => 'Display Hero Header (Selecting NO will also cause the Header Image, Leading Paragraph and Page Title to not be displayed)?',
+			'id' => 'options_display_hero',
+			'default' => 'Yes',
+			'type' => 'select',
+			'options' => array(
+				'Yes',
+				'No',
+			),
+		),
+		array(
 			'label' => 'Header Image:',
 			'id' => 'options_header_image_url',
 			'returnvalue' => 'url',
@@ -19,6 +29,16 @@ class nasapresspageoptionsMetabox {
 			'id' => 'options_header_size',
 			'default' => '450',
 			'type' => 'text',
+		),
+		array(
+			'label' => 'Display the page title?',
+			'id' => 'options_display_title',
+			'default' => 'Yes',
+			'type' => 'select',
+			'options' => array(
+				'Yes',
+				'No',
+			),
 		),
 		array(
 			'label' => 'Leading Paragraph:',

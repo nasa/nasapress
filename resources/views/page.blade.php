@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+@if ( trim(get_post_meta(get_the_ID(), 'options_display_hero', true)) == 'Yes' )
 <main id="main-content" class="usa-content usa-layout-docs">
+@else
+<main id="main-content" class="usa-content usa-layout-docs" style="padding-top: 15rem;">
+@endif
   <div class="usa-overlay"></div>
   @while(have_posts()) @php(the_post())
+  @if ( trim(get_post_meta(get_the_ID(), 'options_display_hero', true)) == 'Yes' )
   <section class="usa-hero"
     style="background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), #212121 url({{ get_post_meta(get_the_ID(), 'options_header_image_url', true) }}) 50% / cover;
 		background: -o-linear-gradient(top, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.7) 100%), #212121 url({{ get_post_meta(get_the_ID(), 'options_header_image_url', true) }}) 50% / cover;
@@ -16,7 +21,9 @@
 				yoast_breadcrumb('<div class="breadcrumbs" id="breadcrumbs">','</div>');
 			}
         @endphp
+        @if ( trim(get_post_meta(get_the_ID(), 'options_display_title', true)) == 'Yes' )
         @include('partials.page-header')
+        @endif
       </div>
     </div>
     <div class="usa-grid">
@@ -26,6 +33,7 @@
     </div>
     <!-- custom html here -->
   </section>
+  @endif
 
   <div class="usa-grid usa-section">
     @php ($gridSize = 'one-whole')
