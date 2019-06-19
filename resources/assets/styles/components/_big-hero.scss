@@ -1,9 +1,8 @@
 .usa-hero {
-  background: linear-gradient(to bottom, rgba(0,0,0,.7) 0%, rgba(0,0,0,.7) 100%), $color-base url('#{$image-path}/bli_grc.jpg') center/cover;
+  background: linear-gradient(to bottom, rgba(0,0,0,.7) 0%, rgba(0,0,0,.7) 100%), $color-base center/cover;
   @include media($nav-width) {
-    background: linear-gradient(to bottom, rgba(0,0,0,.8) 0rem, rgba(0,0,0,.8) $header-height, rgba(0, 0, 0, 0.8) $header-height, transparent 25rem), radial-gradient(farthest-corner at 100% 100%, rgba(0,0,0,0) 0, rgba(0,0,0,0) 45%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,.8) 100%), $color-base url('#{$image-path}/bli_grc.jpg') 0% 40%/170%;
+    background: linear-gradient(to bottom, rgba(0,0,0,.8) 0rem, rgba(0,0,0,.8) $header-height, rgba(0, 0, 0, 0.8) $header-height, transparent 25rem), radial-gradient(farthest-corner at 100% 100%, rgba(0,0,0,0) 0, rgba(0,0,0,0) 45%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,.8) 100%), $color-base 0% 40%/170%;
     padding-top: 17rem;
-    height: 1000px;
   }
 
   color: $color-gray-lightest;

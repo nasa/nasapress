@@ -23,14 +23,14 @@
 
 @include media($nav-width) {
   
-  body.home.admin-bar main .usa-section h2 {
+  body.admin-bar main .usa-section h2 {
     &::before {
       height:77px + $wp-admin-bar-height; /* fixed header height*/
       margin-top:-77px - $wp-admin-bar-height; /* negative fixed header height */
     }
   } 
   
-  .usa-layout-docs-main_content h2, .usa-layout-docs-main_content h3, .usa-layout-docs-main_content h4, .usa-layout-docs-main_content .grc-grid-view-links, body.home main .usa-section h2 {
+  .usa-layout-docs-main_content h2, .usa-layout-docs-main_content h3, .usa-layout-docs-main_content h4, .usa-layout-docs-main_content, body main .usa-section h2 {
     clear: none;
     &::before {
       content:" ";

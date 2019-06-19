@@ -1,0 +1,61 @@
+.larc_nasa_footer {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.larc_nasa_footer #privacy {
+    display: none;
+}
+.frm_error {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #c62d1f;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.frm_error_style {
+    background-color: #f9e0de;
+    background-position: 2rem 50%;
+    background-repeat: no-repeat;
+    background-size: 5.2rem;
+    padding: 1.4rem 1.4rem 1.4rem 8rem;
+    position: relative;
+  	background-image: url('#{$image-path}/alerts/error.png');
+  	background-image: url('#{$image-path}/alerts/error.svg');
+}
+.frm_error_style:before {
+    background-color: #dd361c;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1rem;
+}
+.frm_message {
+    background-color: #e7f4e4;
+    background-position: 2rem 60%;
+    background-repeat: no-repeat;
+    background-size: 5.2rem;
+    padding: 1.4rem 1.4rem 1.4rem 8rem;
+    position: relative;
+    background-image: url('#{$image-path}/alerts/success.png');
+    background-image: url('#{$image-path}/alerts/success.svg');
+}
+.frm_message:before {
+    background-color: #2e8540;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1rem;
+}
+.frm_half {
+	padding-bottom: 2rem;
+}
+
+.menu-item {
+    color: #d6d7d9;
+    font-family: Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 700;
+}
