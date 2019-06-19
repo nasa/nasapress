@@ -19,8 +19,8 @@
     background-size: 5.2rem;
     padding: 1.4rem 1.4rem 1.4rem 8rem;
     position: relative;
-  	background-image: url('#{$image-path}/vendor/error_5a5c3653.png');
-  	background-image: url('#{$image-path}/vendor/error_8773ca7e.svg');
+  	background-image: url('#{$image-path}/alerts/error.png');
+  	background-image: url('#{$image-path}/alerts/error.svg');
 }
 .frm_error_style:before {
     background-color: #dd361c;
@@ -38,8 +38,8 @@
     background-size: 5.2rem;
     padding: 1.4rem 1.4rem 1.4rem 8rem;
     position: relative;
-    background-image: url('#{$image-path}/vendor/success_bd15ac52.png');
-    background-image: url('#{$image-path}/vendor/success_2eb47a3f.svg');
+    background-image: url('#{$image-path}/alerts/success.png');
+    background-image: url('#{$image-path}/alerts/success.svg');
 }
 .frm_message:before {
     background-color: #2e8540;
