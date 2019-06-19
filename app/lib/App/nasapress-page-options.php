@@ -41,6 +41,22 @@ class nasapresspageoptionsMetabox {
 			),
 		),
 		array(
+			'label' => 'Display custom page title?',
+			'id' => 'options_custom_title_select',
+			'default' => 'No',
+			'type' => 'select',
+			'options' => array(
+				'Yes',
+				'No',
+			),
+		),
+		array(
+			'label' => 'Enter a custom page title (Only displayed if you set the above setting to Yes):',
+			'id' => 'options_custom_title',
+			'default' => 'NASA Rocks!',
+			'type' => 'text',
+		),
+		array(
 			'label' => 'Leading Paragraph:',
 			'id' => 'options_leading_paragraph',
 			'type' => 'textarea',
