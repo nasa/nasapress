@@ -20,7 +20,7 @@ body {
   
   height: auto;
   @include media($nav-width) {
-    margin-top: $header-height;
+    margin-top: 0;
   }
 }
 
