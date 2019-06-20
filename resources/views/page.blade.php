@@ -35,7 +35,7 @@
   @endif
 
   @if ( trim(get_post_meta(get_the_ID(), 'options_full_width', true)) == 'Default' )
-  <div class="usa-grid usa-section" style="max-width: full">
+  <div class="usa-grid usa-section">
   @else
   <div class="usa-grid usa-section" style="max-width: {{ get_post_meta(get_the_ID(), 'options_full_width', true) }}">
   @endif
