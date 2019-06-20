@@ -34,6 +34,12 @@ body {
   color: $color-primary-darker;
 }
 
+.usa-content {
+  p {
+    max-width: none;
+  }
+}
+
 .site-subheading, .usa-serif-body p.site-subheading { // higher specificity needed to override .usa-serif-body p styling in nasawds
   @include h6;
   @include font-smoothing;
