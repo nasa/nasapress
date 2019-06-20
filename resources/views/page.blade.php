@@ -34,7 +34,11 @@
   </section>
   @endif
 
-  <div class="usa-grid usa-section">
+  @if ( trim(get_post_meta(get_the_ID(), 'options_full_width', true)) == 'Default' )
+  <div class="usa-grid usa-section" style="max-width: full">
+  @else
+  <div class="usa-grid usa-section" style="max-width: {{ get_post_meta(get_the_ID(), 'options_full_width', true) }}">
+  @endif
     @php ($gridSize = 'one-whole')
     @if ( trim(get_post_meta(get_the_ID(), 'options_display_menu', true)) == 'Yes' )
     @php ($gridSize = 'three-fourths')

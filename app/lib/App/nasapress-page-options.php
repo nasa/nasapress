@@ -92,6 +92,26 @@ class nasapresspageoptionsMetabox {
 				'h2,h3,h4',
 			),
 		),
+		array(
+			'label' => 'What width would you like this pages content to be?',
+			'id' => 'options_full_width',
+			'default' => 'Default',
+			'type' => 'select',
+			'options' => array(
+				'Default',
+				'100%',
+				'95%',
+				'90%',
+				'85%',
+				'80%',
+				'75%',
+				'70%',
+				'65%',
+				'60%',
+				'55%',
+				'50%',
+			),
+		),
 	);
 
 	public function __construct() {
