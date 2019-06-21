@@ -1,6 +1,12 @@
 # Custom Theme Customizations using CSS
----
 Below you will find some example CSS snippits that you can add to your sites Additional CSS editor to provide more control over the look and design of your theme.
+
+## Navigation Menu Width Customization
+If your main navigation menu is too small on your page and links are crowding together then you can use this snippet to make the menu spread out over more of the top portion of the page. You may change the with setting with any recogonized option such as a %, em, rem, or px unit.
+
+    .usa-nav-container {
+        max-width: 75%
+    }
 
 ## Current Page Indicator Color Customization
 The following snippet allows you to change the color of the current page indicator shown on the main navigation menu of your site.
