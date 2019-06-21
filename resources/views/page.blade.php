@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="usa-grid">
-      <div class="usa-width-one-half">
+      <div class="usa-width-three-fourths">
         <p class="usa-font-lead">{{ get_post_meta(get_the_ID(), 'options_leading_paragraph', true) }}</p>
       </div>
     </div>
