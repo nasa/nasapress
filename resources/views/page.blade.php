@@ -35,9 +35,11 @@
   @endif
 
   @if ( trim(get_post_meta(get_the_ID(), 'options_full_width', true)) == 'Default' )
-  <div class="usa-grid usa-section">
+  <div class="usa-grid usa-section" style="padding-top: {{ get_post_meta(get_the_ID(), 'options_top_padding', true) }}">
+  @elseif ( trim(get_post_meta(get_the_ID(), 'options_full_width', true)) == '100%' )
+  <div class="usa-grid usa-section" style="max-width: 100%; padding-left: 0; padding-right: 0; padding-top: {{ get_post_meta(get_the_ID(), 'options_top_padding', true) }}">
   @else
-  <div class="usa-grid usa-section" style="max-width: {{ get_post_meta(get_the_ID(), 'options_full_width', true) }}">
+  <div class="usa-grid usa-section" style="max-width: {{ get_post_meta(get_the_ID(), 'options_full_width', true) }}; padding-top: {{ get_post_meta(get_the_ID(), 'options_top_padding', true) }}">
   @endif
     @php ($gridSize = 'one-whole')
     @if ( trim(get_post_meta(get_the_ID(), 'options_display_menu', true)) == 'Yes' )
