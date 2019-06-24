@@ -35,8 +35,8 @@ body {
 }
 
 .usa-content {
-  p {
-    max-width: none;
+  p, ol, ul {
+    max-width: none !important;
   }
 }
 
