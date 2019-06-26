@@ -67,6 +67,7 @@
     "anchorific": "renettarenula/anchorific.js#v1.1",
     "font-awesome": "^4.7.0",
     "jquery": "1.12.4 - 3",
-    "stickyfill": "wilddeer/stickyfill#v1.1.4"
+    "stickyfill": "wilddeer/stickyfill#v1.1.4",
+    "uswds": "^2.0.3"
   }
 }

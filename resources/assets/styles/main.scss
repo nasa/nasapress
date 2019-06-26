@@ -2,6 +2,9 @@
 
 // Import npm dependencies
 @import "~nasawds/src/stylesheets/nasawds.scss";
+@import "~uswds/src/stylesheets/packages/uswds-layout-grid";
+@import "~uswds/src/stylesheets/utilities/palettes/all";
+@import "~uswds/src/stylesheets/utilities/rules/all";
 @import "~font-awesome/css/font-awesome.css";
 
 @import "common/global";
