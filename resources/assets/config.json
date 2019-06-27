@@ -3,9 +3,6 @@
     "main": [
       "./scripts/main.js",
       "./styles/main.scss"
-    ],
-    "customizer": [
-      "./scripts/customizer.js"
     ]
   },
   "copy": "+(fonts|images)/**/*",

@@ -1,0 +1,37 @@
+// Settings
+// -------------------------------------
+@import '~uswds/src/stylesheets/settings/settings-general';
+@import '~uswds/src/stylesheets/settings/settings-typography';
+@import '~uswds/src/stylesheets/settings/settings-color';
+@import '~uswds/src/stylesheets/settings/settings-spacing';
+@import '~uswds/src/stylesheets/settings/settings-utilities';
+@import '~uswds/src/stylesheets/settings/settings-components';
+
+// Tools
+// -------------------------------------
+@import '~uswds/src/stylesheets/core/functions';
+@import '~uswds/src/stylesheets/core/system-tokens';
+@import '~uswds/src/stylesheets/core/variables';
+@import '~uswds/src/stylesheets/core/properties';
+@import '~uswds/src/stylesheets/core/mixins/all';
+
+// Generic
+// -------------------------------------
+@import '~uswds/src/stylesheets/lib/normalize';
+@import '~uswds/src/stylesheets/core/base';
+
+// Layout grid
+// -------------------------------------
+@import '~uswds/src/stylesheets/core/layout-grid';
+
+// Utilities
+// -------------------------------------
+@import '~uswds/src/stylesheets/utilities/palettes/all';
+@import '~uswds/src/stylesheets/utilities/rules/all';
+@import '~uswds/src/stylesheets/utilities/rules/package';
+@include render-utilities-in($utilities-package);
+
+
+.grid-container {
+    max-width: 1500px;
+}

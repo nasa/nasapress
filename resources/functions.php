@@ -74,10 +74,7 @@ array_map(function ($file) use ($sage_error) {
  * ├── STYLESHEETPATH         -> /srv/www/example.com/current/web/app/themes/sage/resources/views
  * └── TEMPLATEPATH           -> /srv/www/example.com/current/web/app/themes/sage/resources
  */
-if (is_customize_preview() && isset($_GET['theme'])) {
-    $message = "<h1>WARNING</h1><p>You must use the Customize link under the Appearence section of the dashboard to modify this theme's appearence.</p>";
-    wp_die($message, 'WARNING');
-}
+
 $sage_views = basename(dirname(__DIR__)).'/'.basename(__DIR__).'/views';
 add_filter('stylesheet', function () use ($sage_views) {
     return dirname($sage_views);
