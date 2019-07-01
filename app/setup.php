@@ -141,11 +141,6 @@ add_action('after_setup_theme', function () {
     });
 });
 
-/**
- * Init config
- */
-sage()->bindIf('config', Config::class, true);
-
 require_once 'lib/App/NASAWDSBasicNavwalker.php';
 require_once 'lib/App/acf-nasapress.php';
 require_once 'lib/App/nasa-official.php';

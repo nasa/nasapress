@@ -47,7 +47,7 @@
     "cache-loader": "~1.2.5",
     "clean-webpack-plugin": "^0.1.18",
     "copy-globs-webpack-plugin": "^0.2.0",
-    "copy-webpack-plugin": "^4.0.1",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.9",
     "cssnano": "~4.0.5",
     "eslint": "~4.19.1",

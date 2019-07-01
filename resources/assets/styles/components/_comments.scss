@@ -1,23 +1,5 @@
-.comment-list {
-  @extend .list-unstyled;
-}
-
-.comment-list ol {
-  list-style: none;
-}
-
-.comment-form p {
-  @extend .form-group;
-}
-
-.comment-form input[type="text"],
-.comment-form input[type="email"],
-.comment-form input[type="url"],
-.comment-form textarea {
-  @extend .form-control;
-}
-
-.comment-form input[type="submit"] {
-  @extend .btn;
-  @extend .btn-secondary;
-}
+// TODO: .comment-list {}
+// TODO: .comment-list ol {}
+// TODO: .comment-form p {}
+// TODO: .comment-form input {}
+// TODO: .comment-form textarea {}

@@ -10,7 +10,7 @@
   },
   "copy": "+(fonts|images)/**/*",
   "publicPath": "/app/themes/nasapress",
-  "devUrl": "https://www1.local",
+  "devUrl": "http://localhost:8080",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
