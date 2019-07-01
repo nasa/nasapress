@@ -1,8 +1,8 @@
 <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 @if ( trim(get_post_meta(get_the_ID(), 'options_display_hero', true)) == 'Yes' )
-<header class="usa-header usa-header-basic usa-header-dark" role="banner">
+<header class="usa-header usa-header-basic usa-header-dark">
 @else
-<header class="usa-header usa-header-basic usa-header-dark" role="banner" style="background-color: #212121; padding-bottom: 1rem;">
+<header class="usa-header usa-header-basic usa-header-dark" style="background-color: #212121; padding-bottom: 1rem;">
 @endif
   <div class="usa-nav-container">
     <div class="usa-navbar">
@@ -17,7 +17,7 @@
       </div>
       <button class="usa-menu-btn">Menu</button>
     </div>
-    <nav role="navigation" class="usa-nav usa-nav-dark">
+    <nav class="usa-nav usa-nav-dark">
       <button class="usa-nav-close">
         <img src="@asset('images/close.svg')" alt="close">
       </button>
@@ -38,5 +38,3 @@
     </nav>
   </div>
 </header>
-
-

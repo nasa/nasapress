@@ -1,19 +1,7 @@
-<footer class="usa-footer usa-footer-medium" role="contentinfo">
+<footer class="usa-footer usa-footer-medium">
   <div class="usa-grid usa-footer-return-to-top">
     <a href="#">Return to top</a>
   </div>
-
-  <!--<div class="usa-footer-primary-section">
-    <div class="usa-grid-full">
-      <nav class="usa-footer-nav">
-        <ul class="usa-unstyled-list">
-          <li class="usa-width-one-fourth usa-footer-primary-content">
-            <a class="usa-footer-primary-link" href=""></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>-->
 
   <div class="usa-footer-secondary_section">
     <div class="usa-grid">
@@ -36,22 +24,3 @@
     </div>
   </div>
 </footer>
-
-<!--[if lt IE 9]>
-  <script src="@asset('scripts/vendor/selectivizr-min.js')"></script>
-  <script src="@asset('scripts/vendor/respond.js')"></script>
-  <script src="@asset('scripts/vendor/rem.min.js')"></script>
-<![endif]-->
-
-<script type="text/javascript">
-//<![CDATA[
-      //todo-config
-      var usasearch_config = { siteHandle:"your-site-handle" };
-
-      var script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = "//search.usa.gov/javascripts/remote.loader.js";
-      document.getElementsByTagName("head")[0].appendChild(script);
-
-//]]>
-</script>
