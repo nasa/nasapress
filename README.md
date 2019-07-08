@@ -18,7 +18,8 @@ If you'd like your site to be added to this list please [create an issue](https:
 * [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Laravel's Blade](https://laravel.com/docs/5.3/blade) as a templating engine
-* [NASA Glenn Web Design System](https://nasa.github.io/nasawds-site/) based on the [U.S. Web Design System](https://designsystem.digital.gov) for CSS framework
+* [NASA Web Design System](https://nasa.github.io/nasawds-site/) based on the [U.S. Web Design System](https://designsystem.digital.gov) for CSS framework
+* Includes the utilities from the [U.S. Web Design System](https://designsystem.digital.gov/utilities/) for advanced CSS design of your pages content.
 * [Font Awesome](http://fontawesome.io/)
 
 
@@ -35,14 +36,8 @@ If you'd like your site to be added to this list please [create an issue](https:
       * Uncheck 'Use CSS provided by this plugin?'
 * [Responsive Lightbox](https://wordpress.org/plugins/responsive-lightbox/)
     * for viewing images in a lightbox.
-* [Yet Another Related Posts Plugin](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
 * [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)
   * for breadcrumbs
-* [Gravity Forms](http://www.gravityforms.com/) and [Gravity Forms Survey Add-On](http://www.gravityforms.com/add-ons/survey/)
-  * for site feedback form and other forms.
-* [Popup Maker](https://wordpress.org/plugins/popup-maker/)
-  * for displaying site feedback form in a popup window.
-* [Hide YouTube Related Videos](https://wordpress.org/plugins/hide-youtube-related-videos/)
 * [Broken Link Checker](https://wordpress.org/plugins/broken-link-checker/)
 
 
@@ -179,12 +174,44 @@ You can configure if you would like to display the title of the page inside the 
 
 If you would like to display a leading paragraph you may enter that into the text field called *Leading Paragraph*. If you wish to disable the leading paragraph, simply remove all the text from that text field.
 
-## Using the theme
+### Configuring page padding and margins
 
-### On this page navigation
+There are may different layouts for website pages, and NASAPress gives you a lot of flexibility to choose your pages style. By choosing how much spacing you want between your hero header and your page content as well as the width of content on your page, you can design any page style you want.
 
-The default and landing page templates automatically convert h2, h3, and h4 tags into left 'in page' navigation. For shorter pages, this may not be desired, and can be turned off in the "On this page" settings on the edit page screen. In this section, you can also change which heading tags to convert to navigation.
+#### Setting the spacing between the Hero header and your page content
 
+![spacing](https://user-images.githubusercontent.com/6267549/60822224-05ac4e00-a173-11e9-92c9-227fa7cd10aa.png)
+
+Some pages may call for more or less, and sometimes eve no spacing between the content of your page and the bottom of your pages Hero Header. You are able to choose that spacing with values from 0rem through 10rem for plenty of flexability. This can be configured through the *How much space do you want between the bottom of the header or hero image and your page content?* option field.
+
+#### Configuring the page width
+
+NASAPress allows you to configure your pages maximum width based upon your users screen size. This is useful if you wish to develop a page that has content covering the entire page. You can set your pages width with the *What width would you like this pages content to be?* option field.
+
+### Configuring the built-in left navigation menu
+
+![image](https://user-images.githubusercontent.com/6267549/60817748-46ec3000-a16a-11e9-8617-59106bdcf1fc.png)
+
+NASAPress has the ability to generate a navigation menu that resides on the left side of your page based upon the content of your page. This menu self generates by looking for Header 2, Header 3, and Header 4 text that you enter on your page and allows you to instanly move to that section when you click on that part of the navigation menu.
+
+#### Enabling or disabling the menu
+
+You can if you want to display the left navigation menu on a page by choosing *Yes* or *No* in the *Display the left navigation menu?* option. If you choose *No* the following two options will not affect anything.
+
+#### Selecting the navigation menu type
+
+The navigation menu has the ability to act as a menu for just the content on a single page, or for linking to multiple other pages together. You have two options in the *Select the nagivation menu type:* option field. They are as follows:
+
+1. Single Page Menu - This looks at only the headers on the current page and is the default option.
+2. Multi-page Menu - This looks at all the child pages from the curernt page and builds a navigation menu using the order of the pages as well as the titles of the pages.
+
+> This only has an effect if you have the navigation menu enabled.
+
+#### Choosing which tags to build the menu with
+
+You can choose which types of headers you wish the theme to build the navigation menu with by selection an option from the *Which header tags should be used to build the menu?* option field. This may be useful if you have lots of sections but may not want all the sub-sections of your page to be displayed in the menu.
+
+> This only has an effect if you have the navigation menu enabled.
 
 ## Theme structure
 
