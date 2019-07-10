@@ -69,7 +69,7 @@ class headersettings_Settings_Page {
 				'id' => 'header_settings_background_color',
 				'type' => 'color',
 				'section' => 'headersettings_section',
-				'desc' => 'This is the background color of the navigation menu. This only takes effect on pages that the hero header is not displayed on.',
+				'desc' => 'This is the background color of the navigation menu. This only takes effect on pages that the hero header is not displayed on. The default color 33 for the Red, Green, and Blue values.',
 				'placeholder' => '#212121',
 			),
 		);
