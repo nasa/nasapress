@@ -7,6 +7,8 @@
 If you'd like your site to be added to this list please [create an issue](https://github.com/nasa/nasapress/issues/new) with your website name and URL.
 
 * [NASA Glenn Research Center](https://www1.grc.nasa.gov)
+* [NASA LARC Engineering Design Studio](https://eds.larc.nasa.gov)
+* [CLARREO Pathfinder](https://clarreo-pathfinder.larc.nasa.gov/)
 
 ## Features
 
@@ -16,13 +18,10 @@ If you'd like your site to be added to this list please [create an issue](https:
 * [Webpack](https://webpack.github.io/) for compiling assets, optimizing images, and concatenating and minifying files
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Laravel's Blade](https://laravel.com/docs/5.3/blade) as a templating engine
-* [NASA Glenn Web Design System](https://nasa.github.io/nasawds-site/) based on the [U.S. Web Design System](https://designsystem.digital.gov) for CSS framework
+* [NASA Web Design System](https://nasa.github.io/nasawds-site/) based on the [U.S. Web Design System](https://designsystem.digital.gov) for CSS framework
+* Includes the utilities from the [U.S. Web Design System](https://designsystem.digital.gov/utilities/) for advanced CSS design of your pages content.
 * [Font Awesome](http://fontawesome.io/)
 
-### Required plugins
-
-* [Add Categories to Pages](https://wordpress.org/plugins/add-category-to-pages/)
-* [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
 
 ### Recommended plugins
 
@@ -35,26 +34,26 @@ If you'd like your site to be added to this list please [create an issue](https:
     * Plugin Settings:
       * Set External links' CSS class to `usa-external_link`
       * Uncheck 'Use CSS provided by this plugin?'
-* [Disable Search](https://wordpress.org/plugins/disable-search/)
-  * if using DigitalGov Search
 * [Responsive Lightbox](https://wordpress.org/plugins/responsive-lightbox/)
     * for viewing images in a lightbox.
-* [Yet Another Related Posts Plugin](https://wordpress.org/plugins/yet-another-related-posts-plugin/)
 * [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)
   * for breadcrumbs
-* [Gravity Forms](http://www.gravityforms.com/) and [Gravity Forms Survey Add-On](http://www.gravityforms.com/add-ons/survey/)
-  * for site feedback form and other forms.
-* [Popup Maker](https://wordpress.org/plugins/popup-maker/)
-  * for displaying site feedback form in a popup window.
-* [Hide YouTube Related Videos](https://wordpress.org/plugins/hide-youtube-related-videos/)
 * [Broken Link Checker](https://wordpress.org/plugins/broken-link-checker/)
 
-### Designed for use with these services
 
-* [Digital Analytics Program](https://www.digitalgov.gov/services/dap/)
-* [DigitalGov Search](https://search.digitalgov.gov/)
+## Production Requirements
 
-## Requirements
+Make sure all dependencies have been installed before moving on:
+
+* [WordPress](https://wordpress.org/) >= 4.7
+* [PHP](http://php.net/manual/en/install.php) >= 5.6.4
+* MySQL >= 5.6 or MariaDB >= 10.0
+  * Earlier versions don't support FULLTEXT index for InnoDB engine required by YARPP plugin. See [this explanation of issue](https://easyengine.io/tutorials/mysql/yarpp-innodb/).
+* [Composer](https://getcomposer.org/download/)
+  * Alternativly you can create a theme package on another machine and transfer it to your production enviroment, removing the need for composer to be installed in production. Please see the [Production Install - Composer on another machine](#production-install---composer-on-another-machine) section for more details.
+
+
+## Development Requirements
 
 Make sure all dependencies have been installed before moving on:
 
@@ -66,22 +65,68 @@ Make sure all dependencies have been installed before moving on:
 * [Node.js](http://nodejs.org/) >= 6.9.x
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
-## Theme installation
 
-Clone this repo into your WordPress themes directory.
+# Theme Installation
 
-Install Composer dependencies:
+There are multiple options for installing NASAPress. Please select the appropriate one for your enviroment.
 
+## Production Install - With Composer
+
+Clone this repo into your WordPress themes directory. *(Adjust to match your WordPress installation directory)*
 ```shell
-# @ app/themes/nasapress or wp-content/themes/nasapress
+$ cd /var/www/html/wordpress/wp-content/themes/
+$ git clone https://github.com/Celestialdeath99/nasapress.git
+```
+
+Move into the newly created folder: `cd nasapress/`
+
+Install Composer dependencies
+```shell
 $ composer install
 ```
 
-Run `yarn` from the theme directory to install dependencies. If you won't be making changes to the theme's static assets (css, javascript, images) then run `yarn install --production`.
+## Production Install - Composer on another machine
+
+If you do not want to install composer on your production machine there is a workaround. First, make sure you have composer installed on your staging machine. You will not need WordPress or MySQL on this machine.
+
+Clone this repository to your staging machine that has composer installed.
+```shell
+$ git clone https://github.com/Celestialdeath99/nasapress.git
+```
+
+Move into the `nasapress` folder that was just created and install the composer dependencies.
+```shell
+$ composer install
+```
+
+Copy the entire nasapress folder from your staging enviroment into your `wp-content/themes/` folder.
+
+
+## Development Install - Used for developing the theme
+
+Clone this repository to your staging machine that has composer installed.
+```shell
+$ git clone https://github.com/Celestialdeath99/nasapress.git
+```
+
+Move into the `nasapress` folder that was just created and install the composer dependencies.
+```shell
+$ composer install
+```
+
+Install the yarn dependencies.
+```shell
+$ yarn install
+```
 
 Update `resources/assets/config.json` settings:
   * `devUrl` should reflect your local development hostname
   * `publicPath` should reflect your WordPress folder structure (`/wp-content/themes/nasapress` for non-[Bedrock](https://roots.io/bedrock/) installs)
+
+After you have made your changes you can compile your changes using yarn.
+```shell
+$ yarn run build
+```
 
 ## Theme setup
 
@@ -91,70 +136,82 @@ Search the theme folder for `todo-config`. These comments mark the locations whe
 
 Create a menu and assign it to the 'Primary Navigation' location.
 
-### Enable breadcrumbs
+### Configure the site styling in the navigation menu
 
-Install and activate the Yoast SEO plugin. Follow steps 1-5 [in this guide](https://kb.yoast.com/kb/implement-wordpress-seo-breadcrumbs/) to enable yoast breadcrumbs.
+You can configure the site logo and site title in the navigation menu by using the **Header Settings** page under the **Appearance** section of the WordPress Administration page.
 
-### Enable related pages
+## Configuring Page Options
 
-If you want to show related pages at the bottom of pages install and activate the YARPP plugin. On the plugin settings, you might see a message about 'consider titles' and 'consider bodies' being disabled due to InnoDB... If you are using MySQL 5.6 or greater, expand the message and click the 'Create FULLTEXT indices' button to enable them.
+When you create a page, there are many different options avaiable to you that will allow you to customize the page to your liking.
 
-Under display options, select 'Pages', then click the Custom button and make sure 'You Might Also Like' is selected as the template file.
+### Configuring the Hero Header
 
-### Add NASA Web Design Standards styles to Visual Editor
+![image](https://user-images.githubusercontent.com/6267549/60538334-6ef61200-9cd8-11e9-8c19-c10093ba8386.png)
 
-todo
+The hero header consists of several parts on each page. Those sections include the image that is displayed, the page title, and the leading paragraph.
 
-### Add site feedback form
+#### Disabling the Hero Header
 
-todo
+If you do not wish to display a hero header on the page you are editing, you can disable it by changing the *Display Hero Header (Selecting NO will also cause the Header Image, Leading Paragraph and Page Title to not be displayed)?* option to *No*.
 
-## Using the theme
+> Please keep in mind that if you disable the Hero Header you will get a navigation menu with a solid color background. You can configure that color in the Header Settings page under the Appearance section in the WordPress Administration Console.
 
-### Page templates
+#### Setting the Hero Header Image
 
-#### Home page
+You can set the image that is displayed in the hero header by clicking the *Select* button and either choosing an image from your sites media gallery or uploading a new one.
 
-Although not technically a template the theme expects a static front page and styles it differently than the others. Use the following as a starting point for this page.
-```html
-<div class="usa-overlay"></div>
+> Please keep in mind that the full image may not be displayed based upon the size of the viewers screen and that there is a filter over the image.
 
-<section class="usa-hero">
-  <div class="usa-grid">
-    <div class="usa-width-one-half">
-      <h1>Shaping the world of tomorrow</h1>
-    </div>
-  </div>
-  <div class="usa-grid">
-    <div class="usa-width-one-half">
-      <p class="usa-font-lead">By developing technologies that will enable further exploration of the universe and revolutionize air travel</p>
-    </div>
-  </div>
-  <div class="usa-grid">
-    <div class="usa-width-two-thirds">
-      <div class="video-container">
-        https://www.youtube.com/watch?v=5VHPanW6F4E
-      </div>
-    </div>
-  </div>
-</section>
-```
+#### Setting the Hero Header Size
 
-#### Landing Page
+You can configure the size of the hero header for each page by entering a valid CSS size. This can be any value followed by either *px*, *rem*, or *em*.
 
-The landing page template features a large hero image with leading paragraph followed by text. Make sure your featured image is large enough to not pixellate too much at larger screen sizes.
+#### Displaying and customizing the Page Title displayed in the header
 
-#### Default template
+You can configure if you would like to display the title of the page inside the hero header by selecting the appropriate value in the *Display the page title?* option. If you would like to display custom text in that field, please select *Yes* for both the previously mentioned option as well as the *Display custom page title?* option and then enter the text you wish to display as a title in the header in the field below.
 
-The default template has no top hero section.
+#### Adding a leading paragraph
 
-### On this page navigation
+If you would like to display a leading paragraph you may enter that into the text field called *Leading Paragraph*. If you wish to disable the leading paragraph, simply remove all the text from that text field.
 
-The default and landing page templates automatically convert h2, h3, and h4 tags into left 'in page' navigation. For shorter pages, this may not be desired, and can be turned off in the "On this page" settings on the edit page screen. In this section, you can also change which heading tags to convert to navigation.
+### Configuring page padding and margins
 
-### Setting NASA Official
+There are may different layouts for website pages, and NASAPress gives you a lot of flexibility to choose your pages style. By choosing how much spacing you want between your hero header and your page content as well as the width of content on your page, you can design any page style you want.
 
-A NASA Official can be added or changed on the edit page category screen. You can select from any users of your WordPress site.
+#### Setting the spacing between the Hero header and your page content
+
+![spacing](https://user-images.githubusercontent.com/6267549/60822224-05ac4e00-a173-11e9-92c9-227fa7cd10aa.png)
+
+Some pages may call for more or less, and sometimes eve no spacing between the content of your page and the bottom of your pages Hero Header. You are able to choose that spacing with values from 0rem through 10rem for plenty of flexability. This can be configured through the *How much space do you want between the bottom of the header or hero image and your page content?* option field.
+
+#### Configuring the page width
+
+NASAPress allows you to configure your pages maximum width based upon your users screen size. This is useful if you wish to develop a page that has content covering the entire page. You can set your pages width with the *What width would you like this pages content to be?* option field.
+
+### Configuring the built-in left navigation menu
+
+![image](https://user-images.githubusercontent.com/6267549/60817748-46ec3000-a16a-11e9-8617-59106bdcf1fc.png)
+
+NASAPress has the ability to generate a navigation menu that resides on the left side of your page based upon the content of your page. This menu self generates by looking for Header 2, Header 3, and Header 4 text that you enter on your page and allows you to instanly move to that section when you click on that part of the navigation menu.
+
+#### Enabling or disabling the menu
+
+You can if you want to display the left navigation menu on a page by choosing *Yes* or *No* in the *Display the left navigation menu?* option. If you choose *No* the following two options will not affect anything.
+
+#### Selecting the navigation menu type
+
+The navigation menu has the ability to act as a menu for just the content on a single page, or for linking to multiple other pages together. You have two options in the *Select the nagivation menu type:* option field. They are as follows:
+
+1. Single Page Menu - This looks at only the headers on the current page and is the default option.
+2. Multi-page Menu - This looks at all the child pages from the curernt page and builds a navigation menu using the order of the pages as well as the titles of the pages.
+
+> This only has an effect if you have the navigation menu enabled.
+
+#### Choosing which tags to build the menu with
+
+You can choose which types of headers you wish the theme to build the navigation menu with by selection an option from the *Which header tags should be used to build the menu?* option field. This may be useful if you have lots of sections but may not want all the sub-sections of your page to be displayed in the menu.
+
+> This only has an effect if you have the navigation menu enabled.
 
 ## Theme structure
 
@@ -197,8 +254,3 @@ themes/your-theme-name/   # → Root of your Sage based theme
 * `yarn run start` — Compile assets when file changes are made, start Browsersync session
 * `yarn run build` — Compile and optimize the files in your assets directory
 * `yarn run build:production` — Compile assets for production
-
-## Todos
-
-Make site title customizable in wp-admin.
-Make right side of footer customizable in wp-admin.
