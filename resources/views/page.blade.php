@@ -12,7 +12,7 @@
     style="background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), #212121 url({{ get_post_meta(get_the_ID(), 'options_header_image_url', true) }}) 50% / cover;
 		background: -o-linear-gradient(top, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.7) 100%), #212121 url({{ get_post_meta(get_the_ID(), 'options_header_image_url', true) }}) 50% / cover;
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), #212121 url({{ get_post_meta(get_the_ID(), 'options_header_image_url', true) }}) 50% / cover;
-		height: {{ get_post_meta(get_the_ID(), 'options_header_size', true) }}px">
+		height: {{ get_post_meta(get_the_ID(), 'options_header_size', true) }}">
     <div class="usa-grid">
       <div class="usa-width-one-half">
         @php

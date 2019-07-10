@@ -25,9 +25,9 @@ class nasapresspageoptionsMetabox {
 			'type' => 'media',
 		),
 		array(
-			'label' => 'Header Size (In Pixels):',
+			'label' => 'Header Size (any valid CSS sizing tag will work. Example: 25rem):',
 			'id' => 'options_header_size',
-			'default' => '450',
+			'default' => '50rem',
 			'type' => 'text',
 		),
 		array(
@@ -53,7 +53,6 @@ class nasapresspageoptionsMetabox {
 		array(
 			'label' => 'Enter a custom page title (Only displayed if you set the above setting to Yes):',
 			'id' => 'options_custom_title',
-			'default' => 'NASA Rocks!',
 			'type' => 'text',
 		),
 		array(

@@ -64,6 +64,14 @@ class headersettings_Settings_Page {
 				'desc' => 'This should be the text you want displayed on the lower line by the site logo. This text is smaller than the top line of text.',
 				'placeholder' => 'Headquarters',
 			),
+			array(
+				'label' => 'Background Color',
+				'id' => 'header_settings_background_color',
+				'type' => 'color',
+				'section' => 'headersettings_section',
+				'desc' => 'This is the background color of the navigation menu. This only takes effect on pages that the hero header is not displayed on.',
+				'placeholder' => '#212121',
+			),
 		);
 		foreach( $fields as $field ){
 			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'headersettings', $field['section'], $field );
