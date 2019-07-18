@@ -9,8 +9,6 @@
     <p class="usa-font-lead">
     {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
     </p>
-    <h3>Search this site:</h3>
-    @include('partials.search', ['thisSite' => true])
   </div>
 
 </main>

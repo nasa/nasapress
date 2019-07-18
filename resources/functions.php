@@ -82,6 +82,7 @@ add_filter('stylesheet', function () use ($sage_views) {
 add_filter('stylesheet_directory_uri', function ($uri) {
     return dirname($uri);
 });
+remove_filter('term_description','wpautop');
 if ($sage_views !== get_option('stylesheet')) {
     update_option('stylesheet', $sage_views);
     wp_redirect($_SERVER['REQUEST_URI']);

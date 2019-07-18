@@ -107,7 +107,15 @@ add_action('widgets_init', function () {
 		'after_widget'  => '',
 		'before_title'  => '<h3>',
         'after_title'   => '</h3>'
-	));
+    ));
+    register_sidebar( array(
+		'name'			=> 'Posts Navigation Sidebar',
+		'id'			=> 'posts-nav-bar',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ));
 });
 
 /**

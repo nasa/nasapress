@@ -2,23 +2,33 @@
 
 @section('content')
 
-<main class="usa-grid usa-section usa-content usa-layout-docs no-hero" id="main-content">
-
+<main class="usa-grid usa-section usa-content usa-layout-docs no-hero" id="main-content" style="min-height: 75vh">
+  
   @if (!have_posts())
-    <div class="usa-width-one-whole alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
-    </div>
-    {!! get_search_form(false) !!}
-  @endif
 
-  <aside class="usa-width-one-fourth usa-layout-docs-sidenav sticky usa-serif-body"><p class='usa-layout-docs-sidenav-title'>On this page:</p><nav class='anchorific'></nav></aside>
-    <div class="usa-width-three-fourths usa-layout-docs-main_content">
+  <div class="usa-width-one-whole alert alert-warning">
+    <p class="usa-font-lead">
+    {{ __('Sorry, this topic as no posts.', 'sage') }}
+    </p>
+  </div>
+
+  @else
+
+  <div class="usa-width-three-fourths usa-layout-docs-main_content">
+  <h2>@php wp_title(false) @endphp</h2>
   @while (have_posts()) @php(the_post())
-    @include('partials.page-header')
-    @include ('partials.content-'.(get_post_type() !== 'post' ? get_post_type() : get_post_format()))
+    @include ('partials.content')
   @endwhile
 
   {!! get_the_posts_navigation() !!}
-    </div>
+  </div>
+  <aside class="usa-width-one-fourth usa-serif-body">
+  @php
+			dynamic_sidebar('posts-nav-bar');
+		@endphp
+  </aside>
+
+  @endif
+
 </main>
 @endsection
