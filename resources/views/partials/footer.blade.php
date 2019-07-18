@@ -7,13 +7,13 @@
     <div class="usa-grid">
       <div class="usa-footer-logo usa-width-one-half">
         <div class="group">
-          <img class="usa-footer-logo-img" src="@asset('images/logo-nasa.svg')" alt="NASA logo">
+        <img class="usa-footer-logo-img" src="{{ get_template_directory_uri() }}/assets/images/logo-nasa.svg" alt="NASA logo">
           <h3 class="usa-footer-logo-heading">National Aeronautics and Space Administration</h3>
         </div>
 		@php
 			dynamic_sidebar('nasa-official');
 		@endphp
-        <p><a href="https://www.nasa.gov/about/highlights/HP_Privacy.html">Privacy Policy</a> &nbsp;| &nbsp;<a href="https://odeo.hq.nasa.gov/nofear.html">No Fear Act</a> &nbsp;| &nbsp;<a href="https://www.nasa.gov/FOIA/index.html">FOIA</a></p>
+      <p><a href="https://www.nasa.gov/about/highlights/HP_Privacy.html">Privacy Policy</a> &nbsp;| &nbsp;<a href="https://odeo.hq.nasa.gov/nofear.html">No Fear Act</a> &nbsp;| &nbsp;<a href="https://www.nasa.gov/FOIA/index.html">FOIA</a> &nbsp;| &nbsp;<a href="https://www.nasa.gov/">NASA.GOV</a></p>
       </div>
       <div class="usa-footer-contact-links usa-width-one-half">
 		@php

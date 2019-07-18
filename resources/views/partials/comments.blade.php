@@ -11,7 +11,7 @@ if (post_password_required()) {
     </h2>
 
     <ol class="comment-list">
-      {!! wp_list_comments(['style' => 'ol', 'short_ping' => true]) !!}
+      {!! wp_list_comments(array('style' => 'ol', 'short_ping' => true)) !!}
     </ol>
 
     @if (get_comment_pages_count() > 1 && get_option('page_comments'))

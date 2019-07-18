@@ -43,7 +43,7 @@ class centerinformation_Widget extends WP_Widget {
 
 		// Output generated fields
 		echo '<address>';
-		echo '<p class="usa-footer-contact-heading">'.$instance['ci_name'].'</p>';
+		echo '<h4 style="margin-bottom: -.5em;">'.$instance['ci_name'].'</h4>';
 		echo '<p>'.$instance['ci_street_addres'].'<br>'.$instance['ci_city_state_zip'].'<br>'.$instance['ci_phone'].'</p>';
 		echo '</address>';
 
