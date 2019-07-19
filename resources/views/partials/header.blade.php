@@ -19,7 +19,7 @@
     </div>
     <nav class="usa-nav usa-nav-dark">
       <button class="usa-nav-close">
-        <img src="@asset('images/close.svg')" alt="close">
+        <img src="{{ get_template_directory_uri() }}/assets/images/close.svg" alt="close">
       </button>
       @php
         if (has_nav_menu('primary_navigation')) :

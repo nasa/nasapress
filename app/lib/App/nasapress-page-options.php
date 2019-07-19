@@ -21,7 +21,7 @@ class nasapresspageoptionsMetabox {
 		array(
 			'label' => 'Header Image:',
 			'id' => 'options_header_image_url',
-			'returnvalue' => 'url',
+			'returnvalue' => 'id',
 			'type' => 'media',
 		),
 		array(
