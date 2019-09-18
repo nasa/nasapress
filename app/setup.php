@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Contracts\Container\Container as ContainerContract;
+use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
-use Roots\Sage\Config;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
@@ -14,6 +13,10 @@ use Roots\Sage\Template\BladeProvider;
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+
+    if (is_single() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }, 100);
 
 add_action('wp_print_styles', function () {
@@ -24,7 +27,7 @@ add_action('wp_print_styles', function () {
 
 // REMOVE EMOJI ICONS
 remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles'); 
+remove_action('wp_print_styles', 'print_emoji_styles');
 
 /**
  * Theme setup
@@ -112,30 +115,6 @@ add_action('the_post', function ($post) {
  */
 add_action('after_setup_theme', function () {
     /**
-     * Sage config
-     */
-    $paths = [
-        'dir.stylesheet' => get_stylesheet_directory(),
-        'dir.template'   => get_template_directory(),
-        'dir.upload'     => wp_upload_dir()['basedir'],
-        'uri.stylesheet' => get_stylesheet_directory_uri(),
-        'uri.template'   => get_template_directory_uri(),
-    ];
-    $viewPaths = collect(preg_replace('%[\/]?(resources/views)?[\/.]*?$%', '', [STYLESHEETPATH, TEMPLATEPATH]))
-        ->flatMap(function ($path) {
-            return ["{$path}/resources/views", $path];
-        })->unique()->toArray();
-
-        // die(var_dump($viewPaths));
-    config([
-        'assets.manifest' => "{$paths['dir.stylesheet']}/../dist/assets.json",
-        'assets.uri'      => "{$paths['uri.stylesheet']}/dist",
-        'view.compiled'   => "{$paths['dir.upload']}/cache/compiled",
-        'view.namespaces' => ['App' => WP_CONTENT_DIR],
-        'view.paths'      => $viewPaths,
-    ] + $paths);
-
-    /**
      * Add JsonManifest to Sage container
      */
     sage()->singleton('sage.assets', function () {
@@ -145,35 +124,30 @@ add_action('after_setup_theme', function () {
     /**
      * Add Blade to Sage container
      */
-    sage()->singleton('sage.blade', function (ContainerContract $app) {
+    sage()->singleton('sage.blade', function (Container $app) {
         $cachePath = config('view.compiled');
         if (!file_exists($cachePath)) {
             wp_mkdir_p($cachePath);
         }
         (new BladeProvider($app))->register();
-        return new Blade($app['view'], $app);
+        return new Blade($app['view']);
     });
 
     /**
      * Create @asset() Blade directive
      */
     sage('blade')->compiler()->directive('asset', function ($asset) {
-        return "<?= App\\asset_path({$asset}); ?>";
+        return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
-
-/**
- * Init config
- */
-sage()->bindIf('config', Config::class, true);
 
 require_once 'lib/App/NASAWDSBasicNavwalker.php';
 require_once 'lib/App/acf-nasapress.php';
 require_once 'lib/App/nasa-official.php';
 require_once 'lib/App/child-navigation.php';
 
-add_image_size( 'medium_large', '768', '0', false ); 
-add_image_size( 'medium_large', '768', '0', false ); 
+add_image_size( 'medium_large', '768', '0', false );
+add_image_size( 'medium_large', '768', '0', false );
 add_image_size( 'portrait-thumb', '230', '300', array( "center", "top") );
 
 /**
@@ -190,7 +164,7 @@ add_action('pre_get_posts', function ($query) {
  * https://wordpress.stackexchange.com/questions/98083/how-to-get-permalinks-with-category-base-working-with-sub-categories/98095#98095
  */
 add_action('template_redirect', function () {
-    
+
     // Only check on 404's
     if ( is_404() ) {
         $currentURI = !empty($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '/') : '';
