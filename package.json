@@ -48,7 +48,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "~2.1.1",
     "nasawds": "2.0.7",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^1.3.1",
     "postcss-loader": "^1.3.3",
     "resolve-url-loader": "^2.0.2",
