@@ -13,10 +13,16 @@ use Illuminate\View\ViewFinderInterface;
  * @method \Illuminate\View\View file($file, $data = [], $mergeData = [])
  * @method \Illuminate\View\View make($file, $data = [], $mergeData = [])
  */
+
+
 class Blade
 {
+
     /** @var ContainerContract */
     protected $app;
+
+
+    protected $env;
 
     public function __construct(FactoryContract $env, ContainerContract $app)
     {
