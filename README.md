@@ -2,11 +2,36 @@
 
 ![screen shot 2018-06-15 at 12 31 39 pm](https://user-images.githubusercontent.com/1322063/41479194-64b3bab2-7098-11e8-81cf-ccf93f472f61.png)
 
+> **Project status: Deprecated / legacy theme**
+>
+> NASAPress is no longer under active NASA development or support.
+> This repository is being retained as a historical reference for legacy NASA Glenn Research Center websites that still use the theme.
+>
+> NASAPress should be treated as unsupported legacy code. No new feature development is planned, and the repository may be archived.
+
+## Support and compatibility status
+
+NASAPress is a legacy WordPress theme used for older NASA Glenn Research Center web properties, including www1.grc.nasa.gov and related support sites.
+
+Based on current operational assessment, WordPress for these remaining legacy sites is expected to remain fixed at **WordPress 6.3.5** for the remainder of their service life.
+
+Because NASAPress is no longer actively maintained, compatibility with newer WordPress core releases, newer PHP versions, and current or future plugin releases is not guaranteed.
+
+In particular, some plugins may require newer WordPress versions or may introduce regressions or incompatibilities when used with this theme and its older codebase.
+
+Recommendation: use NASAPress only in limited sustainment mode until the remaining legacy sites are retired. Avoid elective enhancements or major theme changes.
+
+## Repository notice
+
+This repository contains historical source code and older front-end build tooling. Security notices associated with dependency files in this repository should be understood in that context. The repository is not intended to represent an actively maintained or modern WordPress theme baseline.
+
 ## Sites using NASAPress
 
-If you'd like your site to be added to this list please [create an issue](https://github.com/nasa/nasapress/issues/new) with your website name and URL.
+Legacy NASA Glenn Research Center websites, including www1.grc.nasa.gov and related support sites.
 
-* [NASA Glenn Research Center](https://www1.grc.nasa.gov)
+## Historical theme information
+
+The remainder of this README is preserved primarily for historical/reference purposes and reflects the original installation, setup, and development guidance for NASAPress.
 
 ## Features
 
